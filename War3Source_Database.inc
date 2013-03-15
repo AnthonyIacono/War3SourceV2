@@ -27,6 +27,21 @@ public DBConnectionCallback(Handle:owner, Handle:db, const String:error[], any:d
 	g_DatabaseConnection = db;
 	
 	DebugPrint("Successfully connected to database.");
+	
+	// Once we connect to the DB we need to go through the queue and process it.
+	new queueSize = GetArraySize(g_PlayerLoadQueue);
+	
+	for(new queueIndex = 0; queueIndex < queueSize; queueIndex++) {
+		new queueItemClientIndex = GetArrayCell(g_PlayerLoadQueue, queueIndex);
+		
+		LoadPlayer(queueItemClientIndex);
+	}
+	
+	ClearArray(g_PlayerLoadQueue);
+}
+
+LoadPlayer(clientIndex) {
+	DebugPrint("Loading client: %d", clientIndex);
 }
 
 IsPlayerLoadQueued(clientIndex) {
@@ -52,7 +67,12 @@ QueuePlayerLoad(clientIndex) {
 	
 	PushArrayCell(g_PlayerLoadQueue, clientIndex);
 	
+	if(g_DatabaseConnection == INVALID_HANDLE) {
+		return;
+	}
 	
+	DequeuePlayerLoad(clientIndex);
+	LoadPlayer(clientIndex);
 }
 
 DequeuePlayerLoad(clientIndex) {
@@ -68,4 +88,22 @@ DequeuePlayerLoad(clientIndex) {
 		RemoveFromArray(g_PlayerLoadQueue, queueIndex);
 		return;
 	}
+}
+
+QueueAllPlayerLoads() {
+	for(new clientIndex = 1; clientIndex <= MaxClients; clientIndex++) {
+		if(!Client_IsIngameAuthorized(clientIndex)) {
+			continue;
+		}
+		
+		QueuePlayerLoad(clientIndex);
+	}
+}
+
+TryQueuePlayerLoad(clientIndex) {
+	if(!Client_IsIngameAuthorized(clientIndex)) {
+		return;
+	}
+	
+	QueuePlayerLoad(clientIndex);
 }
