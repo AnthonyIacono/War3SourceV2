@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B3E797CF-4E77-4C9D-B8A8-7589B6902206}</ProjectGuid>
+    <RootNamespace>regex</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <CustomBuildStep>
+      <Command>
+      </Command>
+    </CustomBuildStep>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(HL2SDKCSS);$(HL2SDKCSS)\public;$(HL2SDKCSS)\public\tier0;$(HL2SDKCSS)\public\tier1;$(SOURCEMOD)\public;$(SOURCEMOD)\public\sourcepawn;$(MMSOURCE19)\core;$(MMSOURCE19)\core\sourcehook;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;SDK_EXPORTS;_CRT_SECURE_NO_DEPRECATE;SOURCEMOD_BUILD;ORANGEBOX_BUILD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>BINARY_NAME="$(TargetFileName)";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SOURCEMOD14)\public;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>tier0.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)war3source.ext.dll</OutputFile>
+      <AdditionalLibraryDirectories>$(HL2SDKCSS)\lib\public;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy /Y "C:\Users\Anthony\Git\sourcemod-1-4-a80f660407e7\extensions\war3source\msvc9\Debug\war3source.ext.dll" "C:\srcds\css\cstrike\addons\sourcemod\extensions\war3source.ext.dll"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>..;..\sdk;..\..\..\public;..\..\..\public\sourcepawn;$(MMSOURCE17)\core\sourcehook;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;SDK_EXPORTS;_CRT_SECURE_NO_DEPRECATE;SOURCEMOD_BUILD;ORANGEBOX_BUILD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>BINARY_NAME="$(TargetFileName)";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>../lib_win/pcre.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)regex.ext.dll</OutputFile>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Client.cpp" />
+    <ClCompile Include="..\ClientListener.cpp" />
+    <ClCompile Include="..\ConnectDBThreadOperationCallback.cpp" />
+    <ClCompile Include="..\Extension.cpp" />
+    <ClCompile Include="..\Globals.cpp" />
+    <ClCompile Include="..\NavMeshArea.cpp" />
+    <ClCompile Include="..\NavMeshHidingSpot.cpp" />
+    <ClCompile Include="..\NavMeshLadder.cpp" />
+    <ClCompile Include="..\NavMeshLoader.cpp" />
+    <ClCompile Include="..\NavMeshPlace.cpp" />
+    <ClCompile Include="..\Player.cpp" />
+    <ClCompile Include="..\PlayerLoader.cpp" />
+    <ClCompile Include="..\PlayerLoaderCallback.cpp" />
+    <ClCompile Include="..\PlayerPersister.cpp" />
+    <ClCompile Include="..\PLSelectQueryDBThreadOperationCallback.cpp" />
+    <ClCompile Include="..\QueryDBThreadOperation.cpp" />
+    <ClCompile Include="..\sdk\smsdk_ext.cpp" />
+    <ClCompile Include="..\ConnectDBThreadOperation.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Client.h" />
+    <ClInclude Include="..\ClientListener.h" />
+    <ClInclude Include="..\ConnectDBThreadOperationCallback.h" />
+    <ClInclude Include="..\Extension.h" />
+    <ClInclude Include="..\Globals.h" />
+    <ClInclude Include="..\HL2SDK.h" />
+    <ClInclude Include="..\ICharacter.h" />
+    <ClInclude Include="..\IClient.h" />
+    <ClInclude Include="..\IConnectDBThreadOperationCallback.h" />
+    <ClInclude Include="..\IList.h" />
+    <ClInclude Include="..\INavMesh.h" />
+    <ClInclude Include="..\INavMeshArea.h" />
+    <ClInclude Include="..\INavMeshHidingSpot.h" />
+    <ClInclude Include="..\INavMeshLadder.h" />
+    <ClInclude Include="..\INavMeshLoader.h" />
+    <ClInclude Include="..\INavMeshPlace.h" />
+    <ClInclude Include="..\IPlayer.h" />
+    <ClInclude Include="..\IPlayerLoader.h" />
+    <ClInclude Include="..\IPlayerLoaderCallback.h" />
+    <ClInclude Include="..\IPlayerPersister.h" />
+    <ClInclude Include="..\IPlayerPersisterCallback.h" />
+    <ClInclude Include="..\IQueryDBThreadOperationCallback.h" />
+    <ClInclude Include="..\ISkill.h" />
+    <ClInclude Include="..\List.h" />
+    <ClInclude Include="..\NavCornerType.h" />
+    <ClInclude Include="..\NavDirType.h" />
+    <ClInclude Include="..\NavLadderDirType.h" />
+    <ClInclude Include="..\NavMeshArea.h" />
+    <ClInclude Include="..\NavMeshHidingSpot.h" />
+    <ClInclude Include="..\NavMeshLadder.h" />
+    <ClInclude Include="..\NavMeshLoader.h" />
+    <ClInclude Include="..\NavMeshPlace.h" />
+    <ClInclude Include="..\Player.h" />
+    <ClInclude Include="..\PlayerLoader.h" />
+    <ClInclude Include="..\PlayerLoaderCallback.h" />
+    <ClInclude Include="..\PlayerPersister.h" />
+    <ClInclude Include="..\PLSelectQueryDBThreadOperationCallback.h" />
+    <ClInclude Include="..\QueryDBThreadOperation.h" />
+    <ClInclude Include="..\sdk\smsdk_config.h" />
+    <ClInclude Include="..\sdk\smsdk_ext.h" />
+    <ClInclude Include="..\..\sourcemod-1-4-a80f660407e7\public\IAdminSystem.h" />
+    <ClInclude Include="..\..\sourcemod-1-4-a80f660407e7\public\IADTFactory.h" />
+    <ClInclude Include="..\..\sourcemod-1-4-a80f660407e7\public\IDataPack.h" />
+    <ClInclude Include="..\..\sourcemod-1-4-a80f660407e7\public\IDBDriver.h" />
+    <ClInclude Include="..\..\sourcemod-1-4-a80f660407e7\public\IExtensionSys.h" />
+    <ClInclude Include="..\..\sourcemod-1-4-a80f660407e7\public\IForwardSys.h" />
+    <ClInclude Include="..\..\sourcemod-1-4-a80f660407e7\public\IGameConfigs.h" />
+    <ClInclude Include="..\..\sourcemod-1-4-a80f660407e7\public\IGameHelpers.h" />
+    <ClInclude Include="..\..\sourcemod-1-4-a80f660407e7\public\IHandleSys.h" />
+    <ClInclude Include="..\..\sourcemod-1-4-a80f660407e7\public\ILibrarySys.h" />
+    <ClInclude Include="..\..\sourcemod-1-4-a80f660407e7\public\IMemoryUtils.h" />
+    <ClInclude Include="..\..\sourcemod-1-4-a80f660407e7\public\IMenuManager.h" />
+    <ClInclude Include="..\..\sourcemod-1-4-a80f660407e7\public\INativeInvoker.h" />
+    <ClInclude Include="..\..\sourcemod-1-4-a80f660407e7\public\IPlayerHelpers.h" />
+    <ClInclude Include="..\..\sourcemod-1-4-a80f660407e7\public\IPluginSys.h" />
+    <ClInclude Include="..\..\sourcemod-1-4-a80f660407e7\public\IRootConsoleMenu.h" />
+    <ClInclude Include="..\..\sourcemod-1-4-a80f660407e7\public\IShareSys.h" />
+    <ClInclude Include="..\..\sourcemod-1-4-a80f660407e7\public\ISourceMod.h" />
+    <ClInclude Include="..\..\sourcemod-1-4-a80f660407e7\public\ITextParsers.h" />
+    <ClInclude Include="..\..\sourcemod-1-4-a80f660407e7\public\IThreader.h" />
+    <ClInclude Include="..\..\sourcemod-1-4-a80f660407e7\public\ITimerSystem.h" />
+    <ClInclude Include="..\..\sourcemod-1-4-a80f660407e7\public\ITranslator.h" />
+    <ClInclude Include="..\ConnectDBThreadOperation.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
