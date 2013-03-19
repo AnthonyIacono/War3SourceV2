@@ -126,6 +126,9 @@
     <ClCompile Include="..\Extension.cpp" />
     <ClCompile Include="..\Globals.cpp" />
     <ClCompile Include="..\NavMeshArea.cpp" />
+    <ClCompile Include="..\NavMeshConnection.cpp" />
+    <ClCompile Include="..\NavMeshEncounterPath.cpp" />
+    <ClCompile Include="..\NavMeshEncounterSpot.cpp" />
     <ClCompile Include="..\NavMeshHidingSpot.cpp" />
     <ClCompile Include="..\NavMeshLadder.cpp" />
     <ClCompile Include="..\NavMeshLoader.cpp" />
@@ -152,8 +155,12 @@
     <ClInclude Include="..\IList.h" />
     <ClInclude Include="..\INavMesh.h" />
     <ClInclude Include="..\INavMeshArea.h" />
+    <ClInclude Include="..\INavMeshConnection.h" />
+    <ClInclude Include="..\INavMeshEncounterPath.h" />
+    <ClInclude Include="..\INavMeshEncounterSpot.h" />
     <ClInclude Include="..\INavMeshHidingSpot.h" />
     <ClInclude Include="..\INavMeshLadder.h" />
+    <ClInclude Include="..\INavMeshLadderConnection.h" />
     <ClInclude Include="..\INavMeshLoader.h" />
     <ClInclude Include="..\INavMeshPlace.h" />
     <ClInclude Include="..\IPlayer.h" />
@@ -168,6 +175,9 @@
     <ClInclude Include="..\NavDirType.h" />
     <ClInclude Include="..\NavLadderDirType.h" />
     <ClInclude Include="..\NavMeshArea.h" />
+    <ClInclude Include="..\NavMeshConnection.h" />
+    <ClInclude Include="..\NavMeshEncounterPath.h" />
+    <ClInclude Include="..\NavMeshEncounterSpot.h" />
     <ClInclude Include="..\NavMeshHidingSpot.h" />
     <ClInclude Include="..\NavMeshLadder.h" />
     <ClInclude Include="..\NavMeshLoader.h" />

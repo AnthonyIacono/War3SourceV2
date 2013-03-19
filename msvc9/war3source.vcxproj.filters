@@ -67,6 +67,15 @@
     <Filter Include="NavMeshHidingSpots">
       <UniqueIdentifier>{09f686b5-8336-4e4a-a2a2-e05cb40dd630}</UniqueIdentifier>
     </Filter>
+    <Filter Include="NavMeshConnections">
+      <UniqueIdentifier>{56f92abd-5535-4f72-9acb-f30ce7af9a35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NavMeshEncounterSpots">
+      <UniqueIdentifier>{e9c2428f-890d-4587-b378-8b69a2e5dc2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NavMeshEncounterPaths">
+      <UniqueIdentifier>{c26a3b35-e7fb-49be-ba89-c9f1670eede4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\sdk\smsdk_ext.cpp">
@@ -122,6 +131,15 @@
     </ClCompile>
     <ClCompile Include="..\NavMeshHidingSpot.cpp">
       <Filter>NavMeshHidingSpots</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NavMeshConnection.cpp">
+      <Filter>NavMeshConnections</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NavMeshEncounterSpot.cpp">
+      <Filter>NavMeshEncounterSpots</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NavMeshEncounterPath.cpp">
+      <Filter>NavMeshEncounterPaths</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -313,6 +331,27 @@
     </ClInclude>
     <ClInclude Include="..\NavMeshHidingSpot.h">
       <Filter>NavMeshHidingSpots</Filter>
+    </ClInclude>
+    <ClInclude Include="..\INavMeshConnection.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NavMeshConnection.h">
+      <Filter>NavMeshConnections</Filter>
+    </ClInclude>
+    <ClInclude Include="..\INavMeshEncounterSpot.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NavMeshEncounterSpot.h">
+      <Filter>NavMeshEncounterSpots</Filter>
+    </ClInclude>
+    <ClInclude Include="..\INavMeshEncounterPath.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NavMeshEncounterPath.h">
+      <Filter>NavMeshEncounterPaths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\INavMeshLadderConnection.h">
+      <Filter>Interfaces</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -10,6 +10,10 @@
 #include "NavLadderDirType.h"
 #include "NavCornerType.h"
 #include "NavMeshLadder.h"
+#include "NavMeshConnection.h"
+#include "NavMeshHidingSpot.h"
+#include "NavMeshEncounterSpot.h"
+#include "NavMeshEncounterPath.h"
 
 namespace War3Source {
 	NavMeshLoader::NavMeshLoader(const char *mapName) {
@@ -135,6 +139,10 @@ namespace War3Source {
 		//META_CONPRINTF("Area count: %d\n", areaCount);
 
 		for(unsigned int areaIndex = 0; areaIndex < areaCount; areaIndex++) {
+			IList<INavMeshConnection*> *connections = new List<INavMeshConnection*>();
+			IList<INavMeshHidingSpot*> *hidingSpots = new List<INavMeshHidingSpot*>();
+			IList<INavMeshEncounterPath*> *encounterPaths = new List<INavMeshEncounterPath*>();
+
 			unsigned int areaID;
 
 			this->ReadData(&areaID, sizeof(unsigned int), 1, fileHandle);
@@ -172,10 +180,8 @@ namespace War3Source {
 			//META_CONPRINTF("Corners: NW(%f), SW(%f)\n", northEastCornerZ, southWestCornerZ);
 
 			// CheckWaterLevel() are we underwater in this area?
-			
-			IList<INavMeshConnection*> *connections = new List<INavMeshConnection*>();
 
-			for(int direction = 0; direction < NAV_DIR_COUNT; direction++) {
+			for(unsigned int direction = 0; direction < NAV_DIR_COUNT; direction++) {
 				unsigned int connectionCount;
 				this->ReadData(&connectionCount, sizeof(unsigned int), 1, fileHandle);
 
@@ -185,7 +191,7 @@ namespace War3Source {
 					unsigned int connectingAreaID;
 					this->ReadData(&connectingAreaID, sizeof(unsigned int), 1, fileHandle);
 
-					INavMeshConnection *connection = new NavMeshConnection(connectingAreaID, direction);
+					INavMeshConnection *connection = new NavMeshConnection(connectingAreaID, (NavDirType)direction);
 					connections->Append(connection);
 				}
 			}
@@ -206,6 +212,8 @@ namespace War3Source {
 				unsigned char hidingSpotFlags;
 				this->ReadData(&hidingSpotFlags, sizeof(unsigned char), 1, fileHandle);
 
+				INavMeshHidingSpot *hidingSpot = new NavMeshHidingSpot(hidingSpotID, hidingSpotX, hidingSpotY, hidingSpotZ, hidingSpotFlags);
+				hidingSpots->Append(hidingSpot);
 				//META_CONPRINTF("Parsed hiding spot (%f, %f, %f) with ID [%p] and flags [%p]\n", hidingSpotX, hidingSpotY, hidingSpotZ, hidingSpotID, hidingSpotFlags);
 			}
 
@@ -253,6 +261,7 @@ namespace War3Source {
 				this->ReadData(&encounterSpotCount, sizeof(unsigned char), 1, fileHandle);
 	
 				//META_CONPRINTF("Encounter [from ID %d] [from dir %p] [to ID %d] [to dir %p] [spot count %d]\n", encounterFromID, encounterFromDirection, encounterToID, encounterToDirection, encounterSpotCount);
+				IList<INavMeshEncounterSpot*> *encounterSpots = new List<INavMeshEncounterSpot*>();
 
 				for(int encounterSpotIndex = 0; encounterSpotIndex < encounterSpotCount; encounterSpotIndex++) {
 					unsigned int encounterSpotOrderId;
@@ -261,8 +270,15 @@ namespace War3Source {
 					unsigned char encounterSpotT;
 					this->ReadData(&encounterSpotT, sizeof(unsigned char), 1, fileHandle);
 
+					float encounterSpotParametricDistance = (float)encounterSpotT / 255.0f;
+
+					INavMeshEncounterSpot *encounterSpot = new NavMeshEncounterSpot(encounterSpotOrderId, encounterSpotParametricDistance);
+					encounterSpots->Append(encounterSpot);
 					//META_CONPRINTF("Encounter spot [order id %d] and [T %p]\n", encounterSpotOrderId, encounterSpotT);
 				}
+
+				INavMeshEncounterPath *encounterPath = new NavMeshEncounterPath(encounterFromID, (NavDirType)encounterFromDirection, encounterToID, (NavDirType)encounterToDirection, encounterSpots);
+				encounterPaths->Append(encounterPath);
 			}
 
 			unsigned short placeID;
@@ -292,44 +308,40 @@ namespace War3Source {
 				//META_CONPRINTF("Earliest occupy time: %f\n", earliestOccupyTime);
 			}
 
-			if(version < 11) {
-				continue;
+			if(version >= 11) {
+				for (int navCornerIndex = 0; navCornerIndex < NAV_CORNER_COUNT; navCornerIndex++) {
+    				float navCornerLightIntensity;
+					this->ReadData(&navCornerLightIntensity, sizeof(float), 1, fileHandle);
+					//META_CONPRINTF("Light intensity: [%f] [idx %d]\n", navCornerLightIntensity, navCornerIndex);
+		 		}
+
+				if(version >= 16) {
+					unsigned int visibleAreaCount;
+					this->ReadData(&visibleAreaCount, sizeof(unsigned int), 1, fileHandle);
+
+					//META_CONPRINTF("Visible area count: %d\n", visibleAreaCount);
+
+					for(unsigned int visibleAreaIndex = 0; visibleAreaIndex < visibleAreaCount; visibleAreaIndex++) {
+						unsigned int visibleAreaID;
+						this->ReadData(&visibleAreaID, sizeof(unsigned int), 1, fileHandle);
+
+						unsigned char visibleAreaAttributes;
+						this->ReadData(&visibleAreaAttributes, sizeof(unsigned char), 1, fileHandle);
+
+						//META_CONPRINTF("Parsed visible area [%d] with attr [%p]\n", visibleAreaID, visibleAreaAttributes);
+					}
+
+					unsigned int inheritVisibilityFrom;
+					this->ReadData(&inheritVisibilityFrom, sizeof(unsigned int), 1, fileHandle);
+
+					//META_CONPRINTF("Inherit visibilty from: %d\n", inheritVisibilityFrom);
+
+					unsigned char unk01;
+					this->ReadData(&unk01, sizeof(unsigned char), 1, fileHandle);
+
+					//META_CONPRINTF("Unk01: %d\n", unk01);
+				}
 			}
-
-			for (int navCornerIndex = 0; navCornerIndex < NAV_CORNER_COUNT; navCornerIndex++) {
-    			float navCornerLightIntensity;
-				this->ReadData(&navCornerLightIntensity, sizeof(float), 1, fileHandle);
-				//META_CONPRINTF("Light intensity: [%f] [idx %d]\n", navCornerLightIntensity, navCornerIndex);
-		 	}
-
-			if(version < 16) {
-				continue;
-			}
-			
-			unsigned int visibleAreaCount;
-			this->ReadData(&visibleAreaCount, sizeof(unsigned int), 1, fileHandle);
-
-			//META_CONPRINTF("Visible area count: %d\n", visibleAreaCount);
-
-			for(unsigned int visibleAreaIndex = 0; visibleAreaIndex < visibleAreaCount; visibleAreaIndex++) {
-				unsigned int visibleAreaID;
-				this->ReadData(&visibleAreaID, sizeof(unsigned int), 1, fileHandle);
-
-				unsigned char visibleAreaAttributes;
-				this->ReadData(&visibleAreaAttributes, sizeof(unsigned char), 1, fileHandle);
-
-				//META_CONPRINTF("Parsed visible area [%d] with attr [%p]\n", visibleAreaID, visibleAreaAttributes);
-			}
-
-			unsigned int inheritVisibilityFrom;
-			this->ReadData(&inheritVisibilityFrom, sizeof(unsigned int), 1, fileHandle);
-
-			//META_CONPRINTF("Inherit visibilty from: %d\n", inheritVisibilityFrom);
-
-			unsigned char unk01;
-			this->ReadData(&unk01, sizeof(unsigned char), 1, fileHandle);
-
-			//META_CONPRINTF("Unk01: %d\n", unk01);
 		}
 
 		unsigned int ladderCount;
