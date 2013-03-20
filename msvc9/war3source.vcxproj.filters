@@ -40,41 +40,59 @@
     <Filter Include="QueryDBThreadOperationCallbacks">
       <UniqueIdentifier>{f29b8357-f2ba-49ee-8460-2d16d40ea39b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="NavMeshLoaders">
-      <UniqueIdentifier>{563edebf-59fc-48ac-8c42-20363d6882bc}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Lists">
       <UniqueIdentifier>{2eb6ee64-9727-4068-82ac-c2cce01ebdb3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="NavMeshPlaces">
-      <UniqueIdentifier>{ba9771f1-259e-460a-a92a-b3edb2478e04}</UniqueIdentifier>
+    <Filter Include="Nav">
+      <UniqueIdentifier>{f0dcfbf9-2d71-4c4b-b76d-2f2a822ade4d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="NavDirTypes">
-      <UniqueIdentifier>{dc85f994-1f87-4967-8d5c-4d357f5e1de1}</UniqueIdentifier>
+    <Filter Include="Nav\NavMeshLadderConnections">
+      <UniqueIdentifier>{61289e14-8411-463c-9629-53a84258ae91}</UniqueIdentifier>
     </Filter>
-    <Filter Include="NavLadderDirTypes">
-      <UniqueIdentifier>{81d794cf-1309-4391-ba03-2f787c02a5b7}</UniqueIdentifier>
+    <Filter Include="Nav\NavMeshEncounterPaths">
+      <UniqueIdentifier>{c26a3b35-e7fb-49be-ba89-c9f1670eede4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="NavCornerTypes">
-      <UniqueIdentifier>{13d5e16b-070f-45d3-ad94-c431e52c38c8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="NavMeshLadders">
-      <UniqueIdentifier>{bae629e0-6b70-49b1-bc65-4da023536b2b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="NavMeshAreas">
-      <UniqueIdentifier>{2490b968-697f-47ea-b31e-57d82e38dd06}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="NavMeshHidingSpots">
-      <UniqueIdentifier>{09f686b5-8336-4e4a-a2a2-e05cb40dd630}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="NavMeshConnections">
-      <UniqueIdentifier>{56f92abd-5535-4f72-9acb-f30ce7af9a35}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="NavMeshEncounterSpots">
+    <Filter Include="Nav\NavMeshEncounterSpots">
       <UniqueIdentifier>{e9c2428f-890d-4587-b378-8b69a2e5dc2e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="NavMeshEncounterPaths">
-      <UniqueIdentifier>{c26a3b35-e7fb-49be-ba89-c9f1670eede4}</UniqueIdentifier>
+    <Filter Include="Nav\NavMeshConnections">
+      <UniqueIdentifier>{56f92abd-5535-4f72-9acb-f30ce7af9a35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Nav\NavMeshHidingSpots">
+      <UniqueIdentifier>{09f686b5-8336-4e4a-a2a2-e05cb40dd630}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Nav\NavMeshAreas">
+      <UniqueIdentifier>{2490b968-697f-47ea-b31e-57d82e38dd06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Nav\NavMeshLadders">
+      <UniqueIdentifier>{bae629e0-6b70-49b1-bc65-4da023536b2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Nav\NavCornerTypes">
+      <UniqueIdentifier>{13d5e16b-070f-45d3-ad94-c431e52c38c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Nav\NavMeshPlaces">
+      <UniqueIdentifier>{ba9771f1-259e-460a-a92a-b3edb2478e04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Nav\NavMeshLoaders">
+      <UniqueIdentifier>{563edebf-59fc-48ac-8c42-20363d6882bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Nav\NavLadderDirTypes">
+      <UniqueIdentifier>{81d794cf-1309-4391-ba03-2f787c02a5b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Nav\NavDirTypes">
+      <UniqueIdentifier>{dc85f994-1f87-4967-8d5c-4d357f5e1de1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interfaces\Nav">
+      <UniqueIdentifier>{23e2565b-05ae-4d6d-a353-5d5392866380}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Nav\NavMeshCornerLightIntensities">
+      <UniqueIdentifier>{36df6475-a51b-4d4d-9dca-9563685733b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Nav\NavMeshVisibleAreas">
+      <UniqueIdentifier>{e09586db-a9e0-4883-b03b-c705993a5bb0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Nav\NavMeshes">
+      <UniqueIdentifier>{04e95e01-47ff-4ad3-8752-1f35ab1acb0f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -118,28 +136,40 @@
       <Filter>QueryDBThreadOperationCallbacks</Filter>
     </ClCompile>
     <ClCompile Include="..\NavMeshLoader.cpp">
-      <Filter>NavMeshLoaders</Filter>
+      <Filter>Nav\NavMeshLoaders</Filter>
     </ClCompile>
     <ClCompile Include="..\NavMeshPlace.cpp">
-      <Filter>NavMeshPlaces</Filter>
+      <Filter>Nav\NavMeshPlaces</Filter>
     </ClCompile>
     <ClCompile Include="..\NavMeshArea.cpp">
-      <Filter>NavMeshAreas</Filter>
+      <Filter>Nav\NavMeshAreas</Filter>
     </ClCompile>
     <ClCompile Include="..\NavMeshLadder.cpp">
-      <Filter>NavMeshLadders</Filter>
+      <Filter>Nav\NavMeshLadders</Filter>
     </ClCompile>
     <ClCompile Include="..\NavMeshHidingSpot.cpp">
-      <Filter>NavMeshHidingSpots</Filter>
+      <Filter>Nav\NavMeshHidingSpots</Filter>
     </ClCompile>
     <ClCompile Include="..\NavMeshConnection.cpp">
-      <Filter>NavMeshConnections</Filter>
+      <Filter>Nav\NavMeshConnections</Filter>
     </ClCompile>
     <ClCompile Include="..\NavMeshEncounterSpot.cpp">
-      <Filter>NavMeshEncounterSpots</Filter>
+      <Filter>Nav\NavMeshEncounterSpots</Filter>
     </ClCompile>
     <ClCompile Include="..\NavMeshEncounterPath.cpp">
-      <Filter>NavMeshEncounterPaths</Filter>
+      <Filter>Nav\NavMeshEncounterPaths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NavMeshLadderConnection.cpp">
+      <Filter>Nav\NavMeshLadderConnections</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NavMeshCornerLightIntensity.cpp">
+      <Filter>Nav\NavMeshCornerLightIntensities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NavMeshVisibleArea.cpp">
+      <Filter>Nav\NavMeshVisibleAreas</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NavMesh.cpp">
+      <Filter>Nav\NavMeshes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -285,13 +315,7 @@
       <Filter>QueryDBThreadOperationCallbacks</Filter>
     </ClInclude>
     <ClInclude Include="..\NavMeshLoader.h">
-      <Filter>NavMeshLoaders</Filter>
-    </ClInclude>
-    <ClInclude Include="..\INavMeshLoader.h">
-      <Filter>Interfaces</Filter>
-    </ClInclude>
-    <ClInclude Include="..\INavMesh.h">
-      <Filter>Interfaces</Filter>
+      <Filter>Nav\NavMeshLoaders</Filter>
     </ClInclude>
     <ClInclude Include="..\IList.h">
       <Filter>Interfaces</Filter>
@@ -299,59 +323,83 @@
     <ClInclude Include="..\List.h">
       <Filter>Lists</Filter>
     </ClInclude>
-    <ClInclude Include="..\INavMeshPlace.h">
-      <Filter>Interfaces</Filter>
-    </ClInclude>
     <ClInclude Include="..\NavMeshPlace.h">
-      <Filter>NavMeshPlaces</Filter>
+      <Filter>Nav\NavMeshPlaces</Filter>
     </ClInclude>
     <ClInclude Include="..\NavDirType.h">
-      <Filter>NavDirTypes</Filter>
+      <Filter>Nav\NavDirTypes</Filter>
     </ClInclude>
     <ClInclude Include="..\NavLadderDirType.h">
-      <Filter>NavLadderDirTypes</Filter>
+      <Filter>Nav\NavLadderDirTypes</Filter>
     </ClInclude>
     <ClInclude Include="..\NavCornerType.h">
-      <Filter>NavCornerTypes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\INavMeshLadder.h">
-      <Filter>Interfaces</Filter>
-    </ClInclude>
-    <ClInclude Include="..\INavMeshArea.h">
-      <Filter>Interfaces</Filter>
+      <Filter>Nav\NavCornerTypes</Filter>
     </ClInclude>
     <ClInclude Include="..\NavMeshArea.h">
-      <Filter>NavMeshAreas</Filter>
+      <Filter>Nav\NavMeshAreas</Filter>
     </ClInclude>
     <ClInclude Include="..\NavMeshLadder.h">
-      <Filter>NavMeshLadders</Filter>
-    </ClInclude>
-    <ClInclude Include="..\INavMeshHidingSpot.h">
-      <Filter>Interfaces</Filter>
+      <Filter>Nav\NavMeshLadders</Filter>
     </ClInclude>
     <ClInclude Include="..\NavMeshHidingSpot.h">
-      <Filter>NavMeshHidingSpots</Filter>
-    </ClInclude>
-    <ClInclude Include="..\INavMeshConnection.h">
-      <Filter>Interfaces</Filter>
+      <Filter>Nav\NavMeshHidingSpots</Filter>
     </ClInclude>
     <ClInclude Include="..\NavMeshConnection.h">
-      <Filter>NavMeshConnections</Filter>
-    </ClInclude>
-    <ClInclude Include="..\INavMeshEncounterSpot.h">
-      <Filter>Interfaces</Filter>
+      <Filter>Nav\NavMeshConnections</Filter>
     </ClInclude>
     <ClInclude Include="..\NavMeshEncounterSpot.h">
-      <Filter>NavMeshEncounterSpots</Filter>
-    </ClInclude>
-    <ClInclude Include="..\INavMeshEncounterPath.h">
-      <Filter>Interfaces</Filter>
+      <Filter>Nav\NavMeshEncounterSpots</Filter>
     </ClInclude>
     <ClInclude Include="..\NavMeshEncounterPath.h">
-      <Filter>NavMeshEncounterPaths</Filter>
+      <Filter>Nav\NavMeshEncounterPaths</Filter>
+    </ClInclude>
+    <ClInclude Include="..\INavMesh.h">
+      <Filter>Interfaces\Nav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\INavMeshPlace.h">
+      <Filter>Interfaces\Nav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\INavMeshArea.h">
+      <Filter>Interfaces\Nav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\INavMeshConnection.h">
+      <Filter>Interfaces\Nav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\INavMeshEncounterPath.h">
+      <Filter>Interfaces\Nav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\INavMeshEncounterSpot.h">
+      <Filter>Interfaces\Nav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\INavMeshHidingSpot.h">
+      <Filter>Interfaces\Nav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\INavMeshLadder.h">
+      <Filter>Interfaces\Nav</Filter>
     </ClInclude>
     <ClInclude Include="..\INavMeshLadderConnection.h">
-      <Filter>Interfaces</Filter>
+      <Filter>Interfaces\Nav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\INavMeshLoader.h">
+      <Filter>Interfaces\Nav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NavMeshLadderConnection.h">
+      <Filter>Nav\NavMeshLadderConnections</Filter>
+    </ClInclude>
+    <ClInclude Include="..\INavMeshCornerLightIntensity.h">
+      <Filter>Interfaces\Nav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NavMeshCornerLightIntensity.h">
+      <Filter>Nav\NavMeshCornerLightIntensities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\INavMeshVisibleArea.h">
+      <Filter>Interfaces\Nav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NavMeshVisibleArea.h">
+      <Filter>Nav\NavMeshVisibleAreas</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NavMesh.h">
+      <Filter>Nav\NavMeshes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

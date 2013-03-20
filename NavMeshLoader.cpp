@@ -14,6 +14,11 @@
 #include "NavMeshHidingSpot.h"
 #include "NavMeshEncounterSpot.h"
 #include "NavMeshEncounterPath.h"
+#include "NavMeshLadderConnection.h"
+#include "NavMeshCornerLightIntensity.h"
+#include "NavMeshArea.h"
+#include "NavMeshVisibleArea.h"
+#include "NavMesh.h"
 
 namespace War3Source {
 	NavMeshLoader::NavMeshLoader(const char *mapName) {
@@ -92,7 +97,7 @@ namespace War3Source {
 #endif
 
 		if(actualBspSize != saveBspSize) {
-			//META_CONPRINTF("WARNING: Navigation mesh was not built with the same version of the map [%d vs %d].\n", actualBspSize, saveBspSize);
+			META_CONPRINTF("WARNING: Navigation mesh was not built with the same version of the map [%d vs %d].\n", actualBspSize, saveBspSize);
 		}
 
 		unsigned char meshAnalyzed = 0;
@@ -133,23 +138,36 @@ namespace War3Source {
 
 		//META_CONPRINTF("Has unnamed areas: %s\n", hasUnnamedAreas ? "yes" : "no");
 
+		IList<INavMeshArea*> *areas = new List<INavMeshArea*>();
+
 		unsigned int areaCount;
 		this->ReadData(&areaCount, sizeof(unsigned int), 1, fileHandle);
 
 		//META_CONPRINTF("Area count: %d\n", areaCount);
 
 		for(unsigned int areaIndex = 0; areaIndex < areaCount; areaIndex++) {
+			unsigned int areaID;
+			float x1, y1, z1, x2, y2, z2;
+			unsigned int areaFlags = 0;
 			IList<INavMeshConnection*> *connections = new List<INavMeshConnection*>();
 			IList<INavMeshHidingSpot*> *hidingSpots = new List<INavMeshHidingSpot*>();
 			IList<INavMeshEncounterPath*> *encounterPaths = new List<INavMeshEncounterPath*>();
-
-			unsigned int areaID;
+			IList<INavMeshLadderConnection*> *ladderConnections = new List<INavMeshLadderConnection*>();
+			IList<INavMeshCornerLightIntensity*> *cornerLightIntensities = new List<INavMeshCornerLightIntensity*>();
+			IList<INavMeshVisibleArea*> *visibleAreas = new List<INavMeshVisibleArea*>();
+			unsigned int inheritVisibilityFrom = 0;
+			unsigned char hidingSpotCount = 0;
+			unsigned int visibleAreaCount = 0;
+			float earliestOccupyTimeFirstTeam = 0.0f;
+			float earliestOccupyTimeSecondTeam = 0.0f;
+			float northEastCornerZ;
+			float southWestCornerZ;
+			unsigned short placeID = 0;
+			unsigned char unk01 = 0;
 
 			this->ReadData(&areaID, sizeof(unsigned int), 1, fileHandle);
 
 			//META_CONPRINTF("Area ID: %d\n", areaID);
-
-			unsigned int areaFlags = 0;
 
 			if(version <= 8) {
 				this->ReadData(&areaFlags, sizeof(unsigned char), 1, fileHandle);
@@ -162,8 +180,6 @@ namespace War3Source {
 			}
 
 			//META_CONPRINTF("Area Flags: %d\n", areaFlags);
-
-			float x1, y1, z1, x2, y2, z2;
 			this->ReadData(&x1, sizeof(float), 1, fileHandle);
 			this->ReadData(&y1, sizeof(float), 1, fileHandle);
 			this->ReadData(&z1, sizeof(float), 1, fileHandle);
@@ -173,7 +189,6 @@ namespace War3Source {
 
 			//META_CONPRINTF("Area extent: (%f, %f, %f), (%f, %f, %f)\n", x1, y1, z1, x2, y2, z2);
 
-			float northEastCornerZ, southWestCornerZ;
 			this->ReadData(&northEastCornerZ, sizeof(float), 1, fileHandle);
 			this->ReadData(&southWestCornerZ, sizeof(float), 1, fileHandle);
 
@@ -196,7 +211,6 @@ namespace War3Source {
 				}
 			}
 
-			unsigned char hidingSpotCount;
 			this->ReadData(&hidingSpotCount, sizeof(unsigned char), 1, fileHandle);
 			//META_CONPRINTF("Hiding Spot Count: %d\n", hidingSpotCount);
 
@@ -281,10 +295,8 @@ namespace War3Source {
 				encounterPaths->Append(encounterPath);
 			}
 
-			unsigned short placeID;
 			this->ReadData(&placeID, sizeof(unsigned short), 1, fileHandle);
 
-			placeID--;
 			//META_CONPRINTF("Place ID: %d\n", placeID);
 
 			for(unsigned int ladderDirection = 0; ladderDirection < NAV_LADDER_DIR_COUNT; ladderDirection++) {
@@ -297,26 +309,26 @@ namespace War3Source {
 					unsigned int ladderConnectID;
 					this->ReadData(&ladderConnectID, sizeof(unsigned int), 1, fileHandle);
 					
+					INavMeshLadderConnection *ladderConnection = new NavMeshLadderConnection(ladderConnectID, (NavLadderDirType)ladderDirection);
+					ladderConnections->Append(ladderConnection);
 					//META_CONPRINTF("Parsed ladder connect [ID %d]\n", ladderConnectID);
 				}
 			}
 
-			for(unsigned int navTeamIndex = 0; navTeamIndex < 2; navTeamIndex++) {
-				float earliestOccupyTime;
-				this->ReadData(&earliestOccupyTime, sizeof(float), 1, fileHandle);
-
-				//META_CONPRINTF("Earliest occupy time: %f\n", earliestOccupyTime);
-			}
+			this->ReadData(&earliestOccupyTimeFirstTeam, sizeof(float), 1, fileHandle);
+			this->ReadData(&earliestOccupyTimeSecondTeam, sizeof(float), 1, fileHandle);
 
 			if(version >= 11) {
 				for (int navCornerIndex = 0; navCornerIndex < NAV_CORNER_COUNT; navCornerIndex++) {
     				float navCornerLightIntensity;
 					this->ReadData(&navCornerLightIntensity, sizeof(float), 1, fileHandle);
+
+					INavMeshCornerLightIntensity *cornerLightIntensity = new NavMeshCornerLightIntensity((NavCornerType)navCornerIndex, navCornerLightIntensity);
+					cornerLightIntensities->Append(cornerLightIntensity);
 					//META_CONPRINTF("Light intensity: [%f] [idx %d]\n", navCornerLightIntensity, navCornerIndex);
 		 		}
 
 				if(version >= 16) {
-					unsigned int visibleAreaCount;
 					this->ReadData(&visibleAreaCount, sizeof(unsigned int), 1, fileHandle);
 
 					//META_CONPRINTF("Visible area count: %d\n", visibleAreaCount);
@@ -328,26 +340,31 @@ namespace War3Source {
 						unsigned char visibleAreaAttributes;
 						this->ReadData(&visibleAreaAttributes, sizeof(unsigned char), 1, fileHandle);
 
+						INavMeshVisibleArea *visibleArea = new NavMeshVisibleArea(visibleAreaID, visibleAreaAttributes);
+						visibleAreas->Append(visibleArea);
 						//META_CONPRINTF("Parsed visible area [%d] with attr [%p]\n", visibleAreaID, visibleAreaAttributes);
 					}
 
-					unsigned int inheritVisibilityFrom;
 					this->ReadData(&inheritVisibilityFrom, sizeof(unsigned int), 1, fileHandle);
 
 					//META_CONPRINTF("Inherit visibilty from: %d\n", inheritVisibilityFrom);
 
-					unsigned char unk01;
 					this->ReadData(&unk01, sizeof(unsigned char), 1, fileHandle);
-
-					//META_CONPRINTF("Unk01: %d\n", unk01);
 				}
 			}
+
+			INavMeshArea *area = new NavMeshArea(areaID, areaFlags, placeID, x1, y1, z1, x2, y2, z2,
+				northEastCornerZ, southWestCornerZ, connections, hidingSpots, encounterPaths, ladderConnections,
+				cornerLightIntensities, visibleAreas, inheritVisibilityFrom, earliestOccupyTimeFirstTeam, earliestOccupyTimeSecondTeam, unk01);
+
+			areas->Append(area);
 		}
 
 		unsigned int ladderCount;
 		this->ReadData(&ladderCount, sizeof(unsigned int), 1, fileHandle);
 		
-		META_CONPRINTF("Ladder count: %d\n", ladderCount);
+		//META_CONPRINTF("Ladder count: %d\n", ladderCount);
+		IList<INavMeshLadder*> *ladders = new List<INavMeshLadder*>();
 
 		for(unsigned int ladderIndex = 0; ladderIndex < ladderCount; ladderIndex++) {
 			unsigned int ladderID;
@@ -390,10 +407,13 @@ namespace War3Source {
 				ladderBottomX, ladderBottomY, ladderBottomZ, (NavDirType)ladderDirection,
 				ladderTopForwardAreaID, ladderTopLeftAreaID, ladderTopRightAreaID, ladderTopBehindAreaID, ladderBottomAreaID);
 
-
+			ladders->Append(ladder);
 		}
 
-		return NULL;
+		fclose(fileHandle);
+		INavMesh *mesh = new NavMesh(magicNumber, version, navMeshSubVersion, saveBspSize, isMeshAnalyzed, places, areas, ladders);
+
+		return mesh;
 	}
 
 	unsigned int NavMeshLoader::ReadData(void *output, unsigned int elementSize, unsigned int elementCount, FILE *fileHandle) {
