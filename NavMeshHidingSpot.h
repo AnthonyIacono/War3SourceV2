@@ -9,6 +9,8 @@ namespace War3Source {
 		NavMeshHidingSpot(unsigned int id, float x, float y, float z, unsigned char flags);
 		~NavMeshHidingSpot();
 
+		void Destroy();
+
 		unsigned int GetID();
 
 		float GetX();

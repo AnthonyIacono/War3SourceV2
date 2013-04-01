@@ -9,6 +9,10 @@ namespace War3Source {
 	NavMeshConnection::~NavMeshConnection() {
 	}
 
+	void NavMeshConnection::Destroy() {
+		delete this;
+	}
+
 	unsigned int NavMeshConnection::GetConnectingAreaID() {
 		return this->connectingAreaID;
 	}

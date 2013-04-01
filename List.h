@@ -2,7 +2,7 @@
 #define __war3source_list_h__
 
 #include "IList.h"
-
+#include <iostream>
 #include <sh_vector.h>
 
 namespace War3Source {
@@ -14,6 +14,10 @@ namespace War3Source {
 
 		~List() {
 			delete this->items;
+		}
+
+		void Destroy() {
+			delete this;
 		}
 
 		bool Insert(T item, unsigned int index) {

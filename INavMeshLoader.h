@@ -6,6 +6,8 @@
 namespace War3Source {
 	class INavMeshLoader {
 	public:
+		virtual void Destroy() = 0;
+
 		virtual INavMesh *Load(char *error, int errorMaxlen) = 0;
 	};
 }

@@ -8,6 +8,8 @@ namespace War3Source {
 	public:
 		NavMeshPlace(unsigned int id, const char *name);
 		~NavMeshPlace();
+		
+		void Destroy();
 
 		const char *GetName();
 		unsigned int GetID();

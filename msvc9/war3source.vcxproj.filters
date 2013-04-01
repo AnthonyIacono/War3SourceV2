@@ -4,172 +4,133 @@
     <Filter Include="SM Interfaces">
       <UniqueIdentifier>{02816345-a7d3-4905-9e7c-064b3670a2a5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="DBThreadOperations">
-      <UniqueIdentifier>{cabd4098-3afc-405c-9eda-2c94a4baa12f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Clients">
-      <UniqueIdentifier>{94b46f57-a94e-4406-aca8-2e22578ad5db}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Interfaces">
       <UniqueIdentifier>{ad6ac777-f6ff-4b10-9f91-d2f4af606068}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="PlayerPersisters">
-      <UniqueIdentifier>{8fcf6cd1-16f5-419e-b61d-d3b5c1107fbd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Players">
-      <UniqueIdentifier>{11961267-9a0c-4f51-9580-f4a6a145cfc7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Extension">
-      <UniqueIdentifier>{16c59403-927e-4d09-b5fb-7d66d3172523}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ConnectDBThreadOperationCallbacks">
-      <UniqueIdentifier>{efe9c447-f5b5-4eed-9136-46da37d7a793}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ClientListeners">
-      <UniqueIdentifier>{cafbcce8-7dc4-4933-acc7-1c3516eec5f8}</UniqueIdentifier>
     </Filter>
     <Filter Include="SDK">
       <UniqueIdentifier>{31958233-BB2D-4e41-A8F9-CE8A4684F436}</UniqueIdentifier>
     </Filter>
-    <Filter Include="PlayerLoaderCallbacks">
-      <UniqueIdentifier>{5c9c2f46-798d-4331-a9d5-8e8a40519736}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="PlayerLoaders">
-      <UniqueIdentifier>{d917da3e-4a6e-4879-bca1-af734bbffe45}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="QueryDBThreadOperationCallbacks">
-      <UniqueIdentifier>{f29b8357-f2ba-49ee-8460-2d16d40ea39b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Lists">
-      <UniqueIdentifier>{2eb6ee64-9727-4068-82ac-c2cce01ebdb3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Nav">
-      <UniqueIdentifier>{f0dcfbf9-2d71-4c4b-b76d-2f2a822ade4d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Nav\NavMeshLadderConnections">
-      <UniqueIdentifier>{61289e14-8411-463c-9629-53a84258ae91}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Nav\NavMeshEncounterPaths">
-      <UniqueIdentifier>{c26a3b35-e7fb-49be-ba89-c9f1670eede4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Nav\NavMeshEncounterSpots">
-      <UniqueIdentifier>{e9c2428f-890d-4587-b378-8b69a2e5dc2e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Nav\NavMeshConnections">
-      <UniqueIdentifier>{56f92abd-5535-4f72-9acb-f30ce7af9a35}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Nav\NavMeshHidingSpots">
-      <UniqueIdentifier>{09f686b5-8336-4e4a-a2a2-e05cb40dd630}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Nav\NavMeshAreas">
-      <UniqueIdentifier>{2490b968-697f-47ea-b31e-57d82e38dd06}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Nav\NavMeshLadders">
-      <UniqueIdentifier>{bae629e0-6b70-49b1-bc65-4da023536b2b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Nav\NavCornerTypes">
-      <UniqueIdentifier>{13d5e16b-070f-45d3-ad94-c431e52c38c8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Nav\NavMeshPlaces">
-      <UniqueIdentifier>{ba9771f1-259e-460a-a92a-b3edb2478e04}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Nav\NavMeshLoaders">
-      <UniqueIdentifier>{563edebf-59fc-48ac-8c42-20363d6882bc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Nav\NavLadderDirTypes">
-      <UniqueIdentifier>{81d794cf-1309-4391-ba03-2f787c02a5b7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Nav\NavDirTypes">
-      <UniqueIdentifier>{dc85f994-1f87-4967-8d5c-4d357f5e1de1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Interfaces\Nav">
       <UniqueIdentifier>{23e2565b-05ae-4d6d-a353-5d5392866380}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Nav\NavMeshCornerLightIntensities">
-      <UniqueIdentifier>{36df6475-a51b-4d4d-9dca-9563685733b2}</UniqueIdentifier>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{b287c794-ff8b-4c81-881c-9cfcf60f1253}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Nav\NavMeshVisibleAreas">
-      <UniqueIdentifier>{e09586db-a9e0-4883-b03b-c705993a5bb0}</UniqueIdentifier>
+    <Filter Include="Source Files\Nav">
+      <UniqueIdentifier>{53cb31fa-e458-4323-b84f-a0ccc5935a41}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Nav\NavMeshes">
-      <UniqueIdentifier>{04e95e01-47ff-4ad3-8752-1f35ab1acb0f}</UniqueIdentifier>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{f403aee9-1c9a-485a-8f23-dda37c662f37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Nav">
+      <UniqueIdentifier>{7c570c51-987e-4fbf-8ccb-4547e932212d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\sdk\smsdk_ext.cpp">
       <Filter>SDK</Filter>
     </ClCompile>
-    <ClCompile Include="..\ConnectDBThreadOperation.cpp">
-      <Filter>DBThreadOperations</Filter>
-    </ClCompile>
-    <ClCompile Include="..\PlayerPersister.cpp">
-      <Filter>PlayerPersisters</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Player.cpp">
-      <Filter>Players</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Client.cpp">
-      <Filter>Clients</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Extension.cpp">
-      <Filter>Extension</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Globals.cpp">
-      <Filter>Extension</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ConnectDBThreadOperationCallback.cpp">
-      <Filter>ConnectDBThreadOperationCallbacks</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ClientListener.cpp">
-      <Filter>ClientListeners</Filter>
-    </ClCompile>
-    <ClCompile Include="..\PlayerLoaderCallback.cpp">
-      <Filter>PlayerLoaderCallbacks</Filter>
-    </ClCompile>
-    <ClCompile Include="..\PlayerLoader.cpp">
-      <Filter>PlayerLoaders</Filter>
-    </ClCompile>
-    <ClCompile Include="..\QueryDBThreadOperation.cpp">
-      <Filter>DBThreadOperations</Filter>
-    </ClCompile>
-    <ClCompile Include="..\PLSelectQueryDBThreadOperationCallback.cpp">
-      <Filter>QueryDBThreadOperationCallbacks</Filter>
-    </ClCompile>
-    <ClCompile Include="..\NavMeshLoader.cpp">
-      <Filter>Nav\NavMeshLoaders</Filter>
-    </ClCompile>
-    <ClCompile Include="..\NavMeshPlace.cpp">
-      <Filter>Nav\NavMeshPlaces</Filter>
-    </ClCompile>
-    <ClCompile Include="..\NavMeshArea.cpp">
-      <Filter>Nav\NavMeshAreas</Filter>
-    </ClCompile>
-    <ClCompile Include="..\NavMeshLadder.cpp">
-      <Filter>Nav\NavMeshLadders</Filter>
-    </ClCompile>
-    <ClCompile Include="..\NavMeshHidingSpot.cpp">
-      <Filter>Nav\NavMeshHidingSpots</Filter>
-    </ClCompile>
-    <ClCompile Include="..\NavMeshConnection.cpp">
-      <Filter>Nav\NavMeshConnections</Filter>
-    </ClCompile>
-    <ClCompile Include="..\NavMeshEncounterSpot.cpp">
-      <Filter>Nav\NavMeshEncounterSpots</Filter>
-    </ClCompile>
-    <ClCompile Include="..\NavMeshEncounterPath.cpp">
-      <Filter>Nav\NavMeshEncounterPaths</Filter>
-    </ClCompile>
-    <ClCompile Include="..\NavMeshLadderConnection.cpp">
-      <Filter>Nav\NavMeshLadderConnections</Filter>
-    </ClCompile>
-    <ClCompile Include="..\NavMeshCornerLightIntensity.cpp">
-      <Filter>Nav\NavMeshCornerLightIntensities</Filter>
-    </ClCompile>
-    <ClCompile Include="..\NavMeshVisibleArea.cpp">
-      <Filter>Nav\NavMeshVisibleAreas</Filter>
+    <ClCompile Include="..\DatabasePlayer.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\NavMesh.cpp">
-      <Filter>Nav\NavMeshes</Filter>
+      <Filter>Source Files\Nav</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NavMeshArea.cpp">
+      <Filter>Source Files\Nav</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NavMeshConnection.cpp">
+      <Filter>Source Files\Nav</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NavMeshCornerLightIntensity.cpp">
+      <Filter>Source Files\Nav</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NavMeshEncounterPath.cpp">
+      <Filter>Source Files\Nav</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NavMeshEncounterSpot.cpp">
+      <Filter>Source Files\Nav</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NavMeshHidingSpot.cpp">
+      <Filter>Source Files\Nav</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NavMeshLadder.cpp">
+      <Filter>Source Files\Nav</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NavMeshLadderConnection.cpp">
+      <Filter>Source Files\Nav</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NavMeshLoader.cpp">
+      <Filter>Source Files\Nav</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NavMeshPlace.cpp">
+      <Filter>Source Files\Nav</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NavMeshVisibleArea.cpp">
+      <Filter>Source Files\Nav</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Extension.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Globals.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ConnectDBThreadOperationCallback.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Client.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ClientListener.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ConnectDBThreadOperation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\QueryDBThreadOperation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PlayerLoaderCallback.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PlayerLoader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PlayerPersister.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PLCharacterSelectQueryDBThreadOperationCallback.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PLSelectQueryDBThreadOperationCallback.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DatabaseCharacter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PLItemSelectQueryDBThreadOperationCallback.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DatabaseItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DatabaseSkill.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PLSkillSelectQueryDBThreadOperationCallback.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PlayerBinder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\DatabaseQuest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Character.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -245,9 +206,6 @@
     <ClInclude Include="..\..\sourcemod-1-4-a80f660407e7\public\ITranslator.h">
       <Filter>SM Interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="..\ConnectDBThreadOperation.h">
-      <Filter>DBThreadOperations</Filter>
-    </ClInclude>
     <ClInclude Include="..\IClient.h">
       <Filter>Interfaces</Filter>
     </ClInclude>
@@ -262,27 +220,6 @@
     </ClInclude>
     <ClInclude Include="..\IPlayer.h">
       <Filter>Interfaces</Filter>
-    </ClInclude>
-    <ClInclude Include="..\PlayerPersister.h">
-      <Filter>PlayerPersisters</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Player.h">
-      <Filter>Players</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Client.h">
-      <Filter>Clients</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Extension.h">
-      <Filter>Extension</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Globals.h">
-      <Filter>Extension</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ConnectDBThreadOperationCallback.h">
-      <Filter>ConnectDBThreadOperationCallbacks</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ClientListener.h">
-      <Filter>ClientListeners</Filter>
     </ClInclude>
     <ClInclude Include="..\HL2SDK.h">
       <Filter>SDK</Filter>
@@ -299,59 +236,11 @@
     <ClInclude Include="..\IPlayerLoaderCallback.h">
       <Filter>Interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="..\PlayerLoaderCallback.h">
-      <Filter>PlayerLoaderCallbacks</Filter>
-    </ClInclude>
-    <ClInclude Include="..\PlayerLoader.h">
-      <Filter>PlayerLoaders</Filter>
-    </ClInclude>
-    <ClInclude Include="..\QueryDBThreadOperation.h">
-      <Filter>DBThreadOperations</Filter>
-    </ClInclude>
     <ClInclude Include="..\IQueryDBThreadOperationCallback.h">
       <Filter>Interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="..\PLSelectQueryDBThreadOperationCallback.h">
-      <Filter>QueryDBThreadOperationCallbacks</Filter>
-    </ClInclude>
-    <ClInclude Include="..\NavMeshLoader.h">
-      <Filter>Nav\NavMeshLoaders</Filter>
-    </ClInclude>
     <ClInclude Include="..\IList.h">
       <Filter>Interfaces</Filter>
-    </ClInclude>
-    <ClInclude Include="..\List.h">
-      <Filter>Lists</Filter>
-    </ClInclude>
-    <ClInclude Include="..\NavMeshPlace.h">
-      <Filter>Nav\NavMeshPlaces</Filter>
-    </ClInclude>
-    <ClInclude Include="..\NavDirType.h">
-      <Filter>Nav\NavDirTypes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\NavLadderDirType.h">
-      <Filter>Nav\NavLadderDirTypes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\NavCornerType.h">
-      <Filter>Nav\NavCornerTypes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\NavMeshArea.h">
-      <Filter>Nav\NavMeshAreas</Filter>
-    </ClInclude>
-    <ClInclude Include="..\NavMeshLadder.h">
-      <Filter>Nav\NavMeshLadders</Filter>
-    </ClInclude>
-    <ClInclude Include="..\NavMeshHidingSpot.h">
-      <Filter>Nav\NavMeshHidingSpots</Filter>
-    </ClInclude>
-    <ClInclude Include="..\NavMeshConnection.h">
-      <Filter>Nav\NavMeshConnections</Filter>
-    </ClInclude>
-    <ClInclude Include="..\NavMeshEncounterSpot.h">
-      <Filter>Nav\NavMeshEncounterSpots</Filter>
-    </ClInclude>
-    <ClInclude Include="..\NavMeshEncounterPath.h">
-      <Filter>Nav\NavMeshEncounterPaths</Filter>
     </ClInclude>
     <ClInclude Include="..\INavMesh.h">
       <Filter>Interfaces\Nav</Filter>
@@ -383,23 +272,146 @@
     <ClInclude Include="..\INavMeshLoader.h">
       <Filter>Interfaces\Nav</Filter>
     </ClInclude>
-    <ClInclude Include="..\NavMeshLadderConnection.h">
-      <Filter>Nav\NavMeshLadderConnections</Filter>
-    </ClInclude>
     <ClInclude Include="..\INavMeshCornerLightIntensity.h">
       <Filter>Interfaces\Nav</Filter>
-    </ClInclude>
-    <ClInclude Include="..\NavMeshCornerLightIntensity.h">
-      <Filter>Nav\NavMeshCornerLightIntensities</Filter>
     </ClInclude>
     <ClInclude Include="..\INavMeshVisibleArea.h">
       <Filter>Interfaces\Nav</Filter>
     </ClInclude>
-    <ClInclude Include="..\NavMeshVisibleArea.h">
-      <Filter>Nav\NavMeshVisibleAreas</Filter>
+    <ClInclude Include="..\IDatabasePlayer.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IDatabaseCharacter.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Client.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ClientListener.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ConnectDBThreadOperation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ConnectDBThreadOperationCallback.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DatabasePlayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Extension.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Globals.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\List.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PlayerLoader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PlayerLoaderCallback.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PlayerPersister.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PLCharacterSelectQueryDBThreadOperationCallback.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PLSelectQueryDBThreadOperationCallback.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\QueryDBThreadOperation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NavCornerType.h">
+      <Filter>Header Files\Nav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NavDirType.h">
+      <Filter>Header Files\Nav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NavLadderDirType.h">
+      <Filter>Header Files\Nav</Filter>
     </ClInclude>
     <ClInclude Include="..\NavMesh.h">
-      <Filter>Nav\NavMeshes</Filter>
+      <Filter>Header Files\Nav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NavMeshArea.h">
+      <Filter>Header Files\Nav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NavMeshConnection.h">
+      <Filter>Header Files\Nav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NavMeshCornerLightIntensity.h">
+      <Filter>Header Files\Nav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NavMeshEncounterPath.h">
+      <Filter>Header Files\Nav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NavMeshEncounterSpot.h">
+      <Filter>Header Files\Nav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NavMeshHidingSpot.h">
+      <Filter>Header Files\Nav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NavMeshLadder.h">
+      <Filter>Header Files\Nav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NavMeshLadderConnection.h">
+      <Filter>Header Files\Nav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NavMeshLoader.h">
+      <Filter>Header Files\Nav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NavMeshPlace.h">
+      <Filter>Header Files\Nav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NavMeshVisibleArea.h">
+      <Filter>Header Files\Nav</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DatabaseCharacter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PLItemSelectQueryDBThreadOperationCallback.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IDatabaseItem.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DatabaseItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IDatabaseSkill.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DatabaseSkill.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PLSkillSelectQueryDBThreadOperationCallback.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IPlayerBinder.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PlayerBinder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IDatabaseQuest.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DatabaseQuest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IQuest.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IItem.h">
+      <Filter>Interfaces</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -6,6 +6,8 @@
 namespace War3Source {
 	class INavMeshCornerLightIntensity {
 	public:
+		virtual void Destroy() = 0;
+
 		virtual NavCornerType GetCornerType() = 0;
 		virtual float GetLightIntensity() = 0;
 	};

@@ -9,6 +9,8 @@ namespace War3Source {
 		NavMeshVisibleArea(unsigned int visibleAreaID, unsigned char attributes);
 		~NavMeshVisibleArea();
 
+		void Destroy();
+
 		unsigned int GetVisibleAreaID();
 		unsigned char GetAttributes();
 

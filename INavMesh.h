@@ -9,6 +9,8 @@
 namespace War3Source {
 	class INavMesh {
 	public:
+		virtual void Destroy() = 0;
+
 		virtual unsigned int GetMagicNumber() = 0;
 		virtual unsigned int GetVersion() = 0;
 		virtual unsigned int GetSubVersion() = 0;

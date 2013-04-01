@@ -9,6 +9,10 @@ namespace War3Source {
 	NavMeshCornerLightIntensity::~NavMeshCornerLightIntensity() {
 	}
 
+	void NavMeshCornerLightIntensity::Destroy() {
+		delete this;
+	}
+
 	NavCornerType NavMeshCornerLightIntensity::GetCornerType() {
 		return this->cornerType;
 	}

@@ -4,9 +4,12 @@
 #include "ConnectDBThreadOperationCallback.h"
 #include "Clientlistener.h"
 #include "Globals.h"
+#include <engine\ivdebugoverlay.h>
 using namespace SourceHook;
 
 SMEXT_LINK(&g_War3SourceExtension);
+
+IVDebugOverlay *debugOverlay = NULL;
 
 namespace War3Source {
 	bool Extension::SDK_OnLoad(char *error, size_t err_max, bool late) {
@@ -34,6 +37,9 @@ namespace War3Source {
 			strcpy_s(error, err_max, "Unable to load database driver.");
 			return false;
 		}
+
+
+		META_CONPRINTF("Connecting to DB...\n");
 
 		ConnectDBThreadOperationCallback *connectDBThreadOperationCallback = new ConnectDBThreadOperationCallback();
 		ConnectDBThreadOperation *connectDBThreadOperation = new ConnectDBThreadOperation(dbDriver, dbInfo, connectDBThreadOperationCallback);

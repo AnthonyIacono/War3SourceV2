@@ -4,6 +4,8 @@
 namespace War3Source {
 	class INavMeshHidingSpot {
 	public:
+		virtual void Destroy() = 0;
+
 		virtual unsigned int GetID() = 0;
 
 		virtual float GetX() = 0;

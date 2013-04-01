@@ -12,6 +12,10 @@ namespace War3Source {
 	NavMeshHidingSpot::~NavMeshHidingSpot() {
 	}
 
+	void NavMeshHidingSpot::Destroy() {
+		delete this;
+	}
+
 	unsigned int NavMeshHidingSpot::GetID() {
 		return this->id;
 	}

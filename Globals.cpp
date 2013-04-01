@@ -6,4 +6,5 @@ Extension g_War3SourceExtension;
 ClientListener *g_ClientListener = NULL;
 SourceMod::IDBDriver *g_DBDriver = NULL;
 SourceMod::IDatabase *g_Database = NULL;
-List<War3Source::IClient*> g_ClientList;
+IList<War3Source::IClient*> *g_ClientList = NULL;
+War3Source::INavMesh *g_NavMesh = NULL;

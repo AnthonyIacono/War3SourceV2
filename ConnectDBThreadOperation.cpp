@@ -37,6 +37,8 @@ namespace War3Source {
 			return;
 		}
 
+		META_CONPRINTF("Got db...\n");
+
 		this->callback->OnSuccess(this->dbDriver, this->dbInfo, this->database);
 	}
 

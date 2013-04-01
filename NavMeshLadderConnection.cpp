@@ -9,6 +9,10 @@ namespace War3Source {
 	NavMeshLadderConnection::~NavMeshLadderConnection() {
 	}
 
+	void NavMeshLadderConnection::Destroy() {
+		delete this;
+	}
+
 	unsigned int NavMeshLadderConnection::GetConnectingLadderID() {
 		return this->connectingLadderID;
 	}

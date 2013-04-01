@@ -14,6 +14,39 @@ namespace War3Source {
 	}
 
 	NavMesh::~NavMesh() {
+		unsigned int placeCount = this->places->Size();
+
+		for(unsigned int placeIndex = 0; placeIndex < placeCount; placeIndex++) {
+			INavMeshPlace *place = this->places->At(placeIndex);
+
+			place->Destroy();
+		}
+
+		this->places->Destroy();
+
+		unsigned int areaCount = this->places->Size();
+
+		for(unsigned int areaIndex = 0; areaIndex < placeCount; areaIndex++) {
+			INavMeshArea *area = this->areas->At(areaIndex);
+
+			area->Destroy();
+		}
+		
+		this->areas->Destroy();
+
+		unsigned int ladderCount = this->ladders->Size();
+
+		for(unsigned int ladderIndex = 0; ladderIndex < ladderCount; ladderIndex++) {
+			INavMeshLadder *ladder = this->ladders->At(ladderIndex);
+
+			ladder->Destroy();
+		}
+
+		this->ladders->Destroy();
+	}
+
+	void NavMesh::Destroy() {
+		delete this;
 	}
 
 	unsigned int NavMesh::GetMagicNumber() {

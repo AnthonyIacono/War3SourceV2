@@ -1,9 +1,6 @@
 #ifndef __war3source_player_h__
 #define __war3source_player_h__
 
-#include <IPlayerHelpers.h>
-#include <sh_vector.h>
-
 #include "IList.h"
 #include "ICharacter.h"
 #include "IPlayer.h"

@@ -10,6 +10,19 @@ namespace War3Source {
 	}
 	
 	NavMeshEncounterPath::~NavMeshEncounterPath() {
+		unsigned int encounterSpotCount = this->encounterSpots->Size();
+
+		for(unsigned int encounterSpotIndex = 0; encounterSpotIndex < encounterSpotCount; encounterSpotIndex++) {
+			INavMeshEncounterSpot *encounterSpot = this->encounterSpots->At(encounterSpotIndex);
+
+			encounterSpot->Destroy();
+		}
+
+		this->encounterSpots->Destroy();
+	}
+
+	void NavMeshEncounterPath::Destroy() {
+		delete this;
 	}
 
 	unsigned int NavMeshEncounterPath::GetFromAreaID() {

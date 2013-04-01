@@ -9,6 +9,8 @@ namespace War3Source {
 		NavMeshLadderConnection(unsigned int connectingLadderID, NavLadderDirType direction);
 		~NavMeshLadderConnection();
 
+		void Destroy();
+
 		unsigned int GetConnectingLadderID();
 		NavLadderDirType GetDirection();
 	

@@ -12,6 +12,8 @@
 namespace War3Source {
 	class INavMeshArea {
 	public:
+		virtual void Destroy() = 0;
+
 		virtual unsigned int GetID() = 0;
 		virtual unsigned int GetFlags() = 0;
 		virtual unsigned int GetPlaceID() = 0;

@@ -33,6 +33,69 @@ namespace War3Source {
 	}
 
 	NavMeshArea::~NavMeshArea() {
+		unsigned int connectionCount = this->connections->Size();
+
+		for(unsigned int connectionIndex = 0; connectionIndex < connectionCount; connectionIndex++) {
+			INavMeshConnection *connection = this->connections->At(connectionIndex);
+
+			connection->Destroy();
+		}
+
+		this->connections->Destroy();
+
+		unsigned int hidingSpotCount = this->hidingSpots->Size();
+
+		for(unsigned int hidingSpotIndex = 0; hidingSpotIndex < hidingSpotCount; hidingSpotIndex++) {
+			INavMeshHidingSpot *hidingSpot = this->hidingSpots->At(hidingSpotIndex);
+
+			hidingSpot->Destroy();
+		}
+
+		this->hidingSpots->Destroy();
+
+		unsigned int encounterPathCount = this->encounterPaths->Size();
+
+		for(unsigned int encounterPathIndex = 0; encounterPathIndex < encounterPathCount; encounterPathIndex++) {
+			INavMeshEncounterPath *encounterPath = this->encounterPaths->At(encounterPathIndex);
+
+			encounterPath->Destroy();
+		}
+
+		this->encounterPaths->Destroy();
+
+		unsigned int ladderConnectionCount = this->ladderConnections->Size();
+
+		for(unsigned int ladderConnectionIndex = 0; ladderConnectionIndex < ladderConnectionCount; ladderConnectionIndex++) {
+			INavMeshLadderConnection *ladderConnection = this->ladderConnections->At(ladderConnectionIndex);
+
+			ladderConnection->Destroy();
+		}
+
+		this->ladderConnections->Destroy();
+
+		unsigned int cornerLightIntensityCount = this->cornerLightIntensities->Size();
+
+		for(unsigned int cornerLightIntensityIndex = 0; cornerLightIntensityIndex < cornerLightIntensityCount; cornerLightIntensityIndex++) {
+			INavMeshCornerLightIntensity *cornerLightIntensity = this->cornerLightIntensities->At(cornerLightIntensityIndex);
+
+			cornerLightIntensity->Destroy();
+		}
+
+		this->cornerLightIntensities->Destroy();
+
+		unsigned int visibleAreaCount = this->visibleAreas->Size();
+
+		for(unsigned int visibleAreaIndex = 0; visibleAreaIndex < visibleAreaCount; visibleAreaIndex++) {
+			INavMeshVisibleArea *visibleArea = this->visibleAreas->At(visibleAreaIndex);
+
+			visibleArea->Destroy();
+		}
+
+		this->visibleAreas->Destroy();
+	}
+
+	void NavMeshArea::Destroy() {
+		delete this;
 	}
 
 	unsigned int NavMeshArea::GetID() {

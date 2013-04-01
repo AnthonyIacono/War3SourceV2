@@ -4,6 +4,8 @@
 namespace War3Source {
 	template <class T> class IList {
 	public:
+		virtual void Destroy() = 0;
+
 		virtual bool Insert(T item, unsigned int index) = 0;
 		virtual void Append(T item) = 0;
 		virtual void Prepend(T item) = 0;

@@ -8,6 +8,8 @@
 namespace War3Source {
 	class INavMeshEncounterPath {
 	public:
+		virtual void Destroy() = 0;
+
 		virtual unsigned int GetFromAreaID() = 0;
 		virtual NavDirType GetFromDirection() = 0;
 		virtual unsigned int GetToAreaID() = 0;

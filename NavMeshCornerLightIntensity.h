@@ -9,6 +9,8 @@ namespace War3Source {
 		NavMeshCornerLightIntensity(NavCornerType cornerType, float lightIntensity);
 		~NavMeshCornerLightIntensity();
 
+		void Destroy();
+
 		NavCornerType GetCornerType();
 		float GetLightIntensity();
 

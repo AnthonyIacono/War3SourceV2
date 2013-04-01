@@ -6,6 +6,8 @@
 namespace War3Source {
 	class INavMeshConnection {
 	public:
+		virtual void Destroy() = 0;
+
 		virtual unsigned int GetConnectingAreaID() = 0;
 		virtual NavDirType GetDirection() = 0;
 	};

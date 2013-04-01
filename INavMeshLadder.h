@@ -6,6 +6,8 @@
 namespace War3Source {
 	class INavMeshLadder {
 	public:
+		virtual void Destroy() = 0;
+
 		virtual unsigned int GetID() = 0;
 		virtual float GetWidth() = 0;
 		virtual float GetLength() = 0;

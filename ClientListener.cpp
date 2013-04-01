@@ -45,7 +45,10 @@ namespace War3Source {
 			return;
 		}
 
-		META_CONPRINTF("Load time :)\n");
+		IPlayerLoaderCallback *playerLoaderCallback = new PlayerLoaderCallback();
+		IPlayerLoader *playerLoader = new PlayerLoader(gamePlayer->GetAuthString(), playerLoaderCallback);
+
+		playerLoader->LoadPlayer();
 	}
 
 	void ClientListener::OnServerActivated(int maxClients) {

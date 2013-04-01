@@ -24,6 +24,10 @@ namespace War3Source {
 	NavMeshLadder::~NavMeshLadder() {
 	}
 
+	void NavMeshLadder::Destroy() {
+		delete this;
+	}
+
 	unsigned int NavMeshLadder::GetID() {
 		return this->id;
 	}

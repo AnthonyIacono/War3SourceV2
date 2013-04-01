@@ -1,13 +1,17 @@
 #include "PLSelectQueryDBThreadOperationCallback.h"
 #include "sdk\smsdk_ext.h"
 #include <IDBDriver.h>
+#include <sh_string.h>
+#include "PLCharacterSelectQueryDBThreadOperationCallback.h"
+#include "QueryDBThreadOperation.h"
+#include "DatabasePlayer.h"
 
 using namespace SourceMod;
+using namespace SourceHook;
 
 namespace War3Source {
 	PLSelectQueryDBThreadOperationCallback::PLSelectQueryDBThreadOperationCallback(IPlayerLoader *playerLoader) {
 		this->playerLoader = playerLoader;
-		strcpy_s(this->steamID, sizeof(this->steamID), steamID);
 	}
 
 	PLSelectQueryDBThreadOperationCallback::~PLSelectQueryDBThreadOperationCallback() {
@@ -21,10 +25,30 @@ namespace War3Source {
 		IResultSet *resultSet = results->GetResultSet();
 
 		if(!resultSet->GetRowCount()) {
-			this->playerLoader->GetCallback()->OnNotFound(this->steamID);
+			this->playerLoader->GetCallback()->OnNotFound(this->playerLoader->GetSteamID());
 		}
 
-		META_CONPRINTF("Success!! Row count: %d", resultSet->GetRowCount());
+		unsigned int idColumn, activeCharacterIdColumn;
+		resultSet->FieldNameToNum("id", &idColumn);
+		resultSet->FieldNameToNum("active_character_id", &activeCharacterIdColumn);
+
+		IResultRow *resultRow = resultSet->FetchRow();
+
+		unsigned int id, activeCharacterId;
+		resultRow->GetInt(idColumn, (int*)&id);
+		resultRow->GetInt(activeCharacterIdColumn, (int*)&activeCharacterId);
+
+		IDatabasePlayer *dbPlayer = new DatabasePlayer(id, this->playerLoader->GetSteamID(), activeCharacterId);
+
+		char charactersQuery[256];
+		sprintf_s(charactersQuery, sizeof(charactersQuery), "SELECT * FROM war3_characters WHERE player_id='%d'", id);
+
+		META_CONPRINTF("Character query\n");
+
+		IQueryDBThreadOperationCallback *characterSelectCallback = new PLCharacterSelectQueryDBThreadOperationCallback(this->playerLoader, dbPlayer);
+		QueryDBThreadOperation *characterSelectOp = new QueryDBThreadOperation(charactersQuery, characterSelectCallback);
+
+		dbi->AddToThreadQueue(characterSelectOp, PrioQueue_Normal);
 	}
 
 	void PLSelectQueryDBThreadOperationCallback::OnCancel(const char *query) {

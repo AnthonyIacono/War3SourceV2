@@ -13,6 +13,8 @@ namespace War3Source {
 
 		~NavMeshLadder();
 
+		void Destroy();
+
 		unsigned int GetID();
 		float GetWidth();
 		float GetLength();

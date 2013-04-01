@@ -9,6 +9,8 @@ namespace War3Source {
 		NavMeshConnection(unsigned int connectingAreaID, NavDirType direction);
 		~NavMeshConnection();
 
+		void Destroy();
+
 		unsigned int GetConnectingAreaID();
 		NavDirType GetDirection();
 

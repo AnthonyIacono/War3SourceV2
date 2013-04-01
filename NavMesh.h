@@ -15,6 +15,8 @@ namespace War3Source {
 
 		~NavMesh();
 
+		void Destroy();
+
 		unsigned int GetMagicNumber();
 		unsigned int GetVersion();
 		unsigned int GetSubVersion();

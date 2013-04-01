@@ -11,6 +11,7 @@ namespace War3Source {
 		NavMeshLoader(const char *mapName);
 		~NavMeshLoader();
 
+		void Destroy();
 		INavMesh *Load(char *error, int errorMaxlen);
 	
 	private:

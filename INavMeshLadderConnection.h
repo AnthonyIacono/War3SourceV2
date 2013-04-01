@@ -6,6 +6,8 @@
 namespace War3Source {
 	class INavMeshLadderConnection {
 	public:
+		virtual void Destroy() = 0;
+
 		virtual unsigned int GetConnectingLadderID() = 0;
 		virtual NavLadderDirType GetDirection() = 0;
 	};

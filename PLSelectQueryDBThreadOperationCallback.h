@@ -17,7 +17,6 @@ namespace War3Source {
 
 	private:
 		IPlayerLoader *playerLoader;
-		char steamID[64];
 	};
 }
 

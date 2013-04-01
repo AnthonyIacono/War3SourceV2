@@ -23,16 +23,19 @@ namespace War3Source {
 		g_ClientListener = new ClientListener();
 		playerhelpers->AddClientListener(g_ClientListener);
 
+		META_CONPRINTF("Added client listener!\n");
+
 		if(g_pSM->IsMapRunning()) {
 			const char *currentMap = gamehelpers->GetCurrentMap();
 
 			char error[1024];
 			NavMeshLoader *loader = new NavMeshLoader(currentMap);
-			//INavMesh *mesh = loader->Load(error, sizeof(error));
-			//META_CONPRINTF("Error str: %s", error);
+			INavMesh *mesh = loader->Load(error, sizeof(error));
+			META_CONPRINTF("Error str: %s", error);
 		}
 	}
 
 	void ConnectDBThreadOperationCallback::OnError(SourceMod::IDBDriver *dbDriver, const SourceMod::DatabaseInfo *databaseInfo, const char *error) {
+		META_CONPRINTF("Failed to connect to DB: %s\n", error);
 	}
 }

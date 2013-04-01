@@ -1,24 +1,32 @@
 #ifndef __war3source_character_h__
 #define __war3source_character_h__
 
-#include <sh_vector.h>
+#include "ICharacter.h"
 
-class Player;
-class Skill;
-class Race;
-class CharacterSkill;
+namespace War3Source {
+	class Character : public ICharacter {
+	public:
+		Character(const char *name, const char *className, unsigned int level, unsigned int xp, IList<ISkill*> *skills, IList<IItem*> *items, IList<IQuest*> *quests);
+		~Character();
 
-class Character {
-public:
-	Character(const char *name, Player *player, Race *race, SourceHook::CVector<CharacterSkill*> skills, int xp);
-	~Character();
+		void Destroy();
+		const char *GetName();
+		const char *GetClass();
+		unsigned int GetLevel();
+		unsigned int GetXP();
+		IList<ISkill*> *GetSkillList();
+		IList<IItem*> *GetItemList();
+		IList<IQuest*> *GetQuestList();
 
-private:
-	char name[128];
-	Player *player;
-	Race *race;
-	SourceHook::CVector<CharacterSkill*> skills;
-	int xp;
-};
+	private:
+		char name[64];
+		char className[64];
+		unsigned int level;
+		unsigned int xp;
+		IList<ISkill*> *skills;
+		IList<IItem*> *items;
+		IList<IQuest*> *quests;
+	};
+}
 
 #endif

@@ -9,6 +9,10 @@ namespace War3Source {
 	NavMeshEncounterSpot::~NavMeshEncounterSpot() {
 	}
 
+	void NavMeshEncounterSpot::Destroy() {
+		delete this;
+	}
+
 	unsigned int NavMeshEncounterSpot::GetOrderID() {
 		return this->orderID;
 	}

@@ -11,6 +11,8 @@ namespace War3Source {
 		NavMeshEncounterPath(unsigned int fromAreaID, NavDirType fromDirection, unsigned int toAreaID, NavDirType toDirection, IList<INavMeshEncounterSpot*> *encounterSpots);
 		~NavMeshEncounterPath();
 
+		void Destroy();
+
 		unsigned int GetFromAreaID();
 		NavDirType GetFromDirection();
 		unsigned int GetToAreaID();

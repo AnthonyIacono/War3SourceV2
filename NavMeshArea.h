@@ -24,6 +24,8 @@ namespace War3Source {
 
 		~NavMeshArea();
 
+		void Destroy();
+
 		unsigned int GetID();
 		unsigned int GetFlags();
 		unsigned int GetPlaceID();

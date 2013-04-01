@@ -10,6 +10,10 @@ namespace War3Source {
 	NavMeshPlace::~NavMeshPlace() {
 	}
 
+	void NavMeshPlace::Destroy() {
+		delete this;
+	}
+
 	const char *NavMeshPlace::GetName() {
 		return this->name;
 	}

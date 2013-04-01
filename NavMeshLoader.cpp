@@ -29,6 +29,10 @@ namespace War3Source {
 	NavMeshLoader::~NavMeshLoader() {
 	}
 
+	void NavMeshLoader::Destroy() {
+		delete this;
+	}
+
 	INavMesh *NavMeshLoader::Load(char *error, int errorMaxlen) {
 		strcpy_s(error, errorMaxlen, "");
 
@@ -125,7 +129,7 @@ namespace War3Source {
 			char placeName[256];
 			this->ReadData(placeName, sizeof(unsigned char), placeSize, fileHandle);
 
-			places->Append(new NavMeshPlace(placeIndex, placeName));
+			places->Append(new NavMeshPlace(placeIndex + 1, placeName));
 			//META_CONPRINTF("Parsed place: %s [%d]\n", placeName, placeIndex);
 		}
 
@@ -412,7 +416,6 @@ namespace War3Source {
 
 		fclose(fileHandle);
 		INavMesh *mesh = new NavMesh(magicNumber, version, navMeshSubVersion, saveBspSize, isMeshAnalyzed, places, areas, ladders);
-
 		return mesh;
 	}
 

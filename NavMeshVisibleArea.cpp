@@ -8,6 +8,10 @@ namespace War3Source {
 
 	NavMeshVisibleArea::~NavMeshVisibleArea() {
 	}
+	
+	void NavMeshVisibleArea::Destroy() {
+		delete this;
+	}
 
 	unsigned int NavMeshVisibleArea::GetVisibleAreaID() {
 		return this->visibleAreaID;

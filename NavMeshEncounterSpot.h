@@ -9,6 +9,8 @@ namespace War3Source {
 		NavMeshEncounterSpot(unsigned int orderID, float parametricDistance);
 		~NavMeshEncounterSpot();
 
+		void Destroy();
+
 		unsigned int GetOrderID();
 		float GetParametricDistance();
 
