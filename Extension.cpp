@@ -1,7 +1,7 @@
 #include <sourcemod_version.h>
 #include "Extension.h"
-#include "ConnectDBThreadOperation.h"
-#include "ConnectDBThreadOperationCallback.h"
+#include "ConnectOperation.h"
+#include "ConnectCallback.h"
 #include "Clientlistener.h"
 #include "Globals.h"
 #include <engine\ivdebugoverlay.h>
@@ -41,10 +41,10 @@ namespace War3Source {
 
 		META_CONPRINTF("Connecting to DB...\n");
 
-		ConnectDBThreadOperationCallback *connectDBThreadOperationCallback = new ConnectDBThreadOperationCallback();
-		ConnectDBThreadOperation *connectDBThreadOperation = new ConnectDBThreadOperation(dbDriver, dbInfo, connectDBThreadOperationCallback);
+		IConnectCallback *connectCallback = new ConnectCallback();
+		ConnectOperation *connectOperation = new ConnectOperation(dbDriver, dbInfo, connectCallback);
 	
-		dbi->AddToThreadQueue(connectDBThreadOperation, PrioQueue_Normal);
+		dbi->AddToThreadQueue(connectOperation, PrioQueue_Normal);
 
 		return true;
 	}
