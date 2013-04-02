@@ -6,6 +6,9 @@
 #include "HL2SDK.h"
 
 namespace War3Source {
+	/**
+	 * Represents a connected client.
+	 */
 	class IClient {
 	public:
 		virtual IPlayer *GetPlayer() = 0;
