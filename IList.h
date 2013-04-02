@@ -12,6 +12,7 @@ namespace War3Source {
 		virtual T At(unsigned int index) = 0;
 		virtual size_t Size() = 0;
 		virtual unsigned int Find(T item) = 0;
+		virtual void Erase(unsigned int index) = 0;
 	};
 }
 

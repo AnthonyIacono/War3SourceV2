@@ -47,6 +47,10 @@ namespace War3Source {
 			return this->items->size();
 		}
 
+		void Erase(unsigned int index) {
+			this->items->erase(this->items->iterAt(index));
+		}
+
 		unsigned int Find(T item) {
 			size_t size = this->items->size();
 

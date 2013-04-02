@@ -132,6 +132,9 @@
     <ClCompile Include="..\Character.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\Item.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\sdk\smsdk_config.h">
@@ -412,6 +415,12 @@
     </ClInclude>
     <ClInclude Include="..\IItem.h">
       <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IMap.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Map.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

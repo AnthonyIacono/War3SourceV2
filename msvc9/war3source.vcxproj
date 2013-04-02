@@ -131,6 +131,7 @@
     <ClCompile Include="..\DatabaseSkill.cpp" />
     <ClCompile Include="..\Extension.cpp" />
     <ClCompile Include="..\Globals.cpp" />
+    <ClCompile Include="..\Item.cpp" />
     <ClCompile Include="..\NavMesh.cpp" />
     <ClCompile Include="..\NavMeshArea.cpp" />
     <ClCompile Include="..\NavMeshConnection.cpp" />
@@ -178,6 +179,7 @@
     <ClInclude Include="..\IDatabaseSkill.h" />
     <ClInclude Include="..\IItem.h" />
     <ClInclude Include="..\IList.h" />
+    <ClInclude Include="..\IMap.h" />
     <ClInclude Include="..\INavMesh.h" />
     <ClInclude Include="..\INavMeshArea.h" />
     <ClInclude Include="..\INavMeshConnection.h" />
@@ -200,6 +202,7 @@
     <ClInclude Include="..\IQuest.h" />
     <ClInclude Include="..\ISkill.h" />
     <ClInclude Include="..\List.h" />
+    <ClInclude Include="..\Map.h" />
     <ClInclude Include="..\NavCornerType.h" />
     <ClInclude Include="..\NavDirType.h" />
     <ClInclude Include="..\NavLadderDirType.h" />
