@@ -1,10 +1,10 @@
 #include "DBPlayer.h"
-#include <iostream>
+#include "Utils.h"
 
 namespace War3Source {
 	DBPlayer::DBPlayer(unsigned int id, const char *steamID, unsigned int activeCharacterID) {
 		this->id = id;
-		strcpy_s(this->steamID, sizeof(this->steamID), steamID);
+		StrCopy(this->steamID, sizeof(this->steamID), steamID);
 		this->activeCharacterID = activeCharacterID;
 	}
 

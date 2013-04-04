@@ -1,5 +1,5 @@
 #include "Player.h"
-#include <iostream>
+#include "Utils.h"
 
 namespace War3Source {
 	Player::Player(IList<ICharacter*> *characterList, ICharacter *activeCharacter) {

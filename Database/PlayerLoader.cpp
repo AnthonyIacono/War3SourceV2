@@ -1,11 +1,11 @@
 #include "PlayerLoader.h"
 #include "QueryOperation.h"
 #include "PLPlayerCallback.h"
-#include <iostream>
+#include "Utils.h"
 
 namespace War3Source {
 	PlayerLoader::PlayerLoader(const char *steamID, IPlayerLoaderCallback *callback) {
-		strcpy_s(this->steamID, sizeof(this->steamID), steamID);
+		StrCopy(this->steamID, sizeof(this->steamID), steamID);
 		this->callback = callback;
 	}
 

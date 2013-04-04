@@ -26,6 +26,7 @@ namespace War3Source {
 
 		if(!resultSet->GetRowCount()) {
 			this->playerLoader->GetCallback()->OnNotFound(this->playerLoader->GetSteamID());
+			return;
 		}
 
 		unsigned int idColumn, activeCharacterIdColumn;
@@ -42,8 +43,6 @@ namespace War3Source {
 
 		char charactersQuery[256];
 		sprintf_s(charactersQuery, sizeof(charactersQuery), "SELECT * FROM war3_characters WHERE player_id='%d'", id);
-
-		META_CONPRINTF("Character query\n");
 
 		IQueryCallback *characterSelectCallback = new PLCharacterCallback(this->playerLoader, dbPlayer);
 		QueryOperation *characterSelectOp = new QueryOperation(charactersQuery, characterSelectCallback);

@@ -1,10 +1,10 @@
 #include "Character.h"
-#include <iostream>
+#include "Utils.h"
 
 namespace War3Source {
 	Character::Character(const char *name, const char *className, unsigned int level, unsigned int xp, IList<ISkill*> *skills, IList<IItem*> *items, IList<IQuest*> *quests) {
-		strcpy_s(this->name, sizeof(this->name), name);
-		strcpy_s(this->className, sizeof(this->className), className);
+		StrCopy(this->name, sizeof(this->name), name);
+		StrCopy(this->className, sizeof(this->className), className);
 		this->level = level;
 		this->xp = xp;
 		this->skills = skills;

@@ -70,8 +70,6 @@ namespace War3Source {
 
 		skillsQuery.append(")");
 
-		META_CONPRINTF("Query is: %s\n", skillsQuery.c_str());
-
 		IQueryCallback *skillsSelectCallback = new PLSkillCallback(this->playerLoader, this->databasePlayer, this->DBCharacters, databaseItems);
 		QueryOperation *skillsSelectOp = new QueryOperation(skillsQuery.c_str(), skillsSelectCallback);
 

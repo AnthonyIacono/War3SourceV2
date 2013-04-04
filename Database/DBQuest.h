@@ -4,10 +4,10 @@
 #include "IDBQuest.h"
 
 namespace War3Source {
-	class DatabaseQuest : public IDBQuest {
+	class DBQuest : public IDBQuest {
 	public:
-		DBSkill(unsigned int id, unsigned int characterId, const char *className, const char *data);
-		~DBSkill();
+		DBQuest(unsigned int id, unsigned int characterId, const char *className, const char *data);
+		~DBQuest();
 
 		void Destroy();
 		unsigned int GetID();

@@ -3,10 +3,10 @@
 
 namespace War3Source {
 	QueryOperation::QueryOperation(const char *query, IQueryCallback *callback) {
-		strcpy_s(this->query, sizeof(this->query), query);
+		StrCopy(this->query, sizeof(this->query), query);
 		this->callback = callback;
 
-		strcpy_s(this->error, sizeof(this->error), "");
+		StrCopy(this->error, sizeof(this->error), "");
 		this->errorCode = 0;
 		this->results = NULL;
 	}
@@ -27,7 +27,7 @@ namespace War3Source {
 		}
 
 		const char *error = g_Database->GetError(&this->errorCode);
-		strcpy_s(this->error, sizeof(this->error), error);
+		StrCopy(this->error, sizeof(this->error), error);
 	}
 
 	void QueryOperation::CancelThinkPart() {

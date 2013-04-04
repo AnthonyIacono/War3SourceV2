@@ -70,7 +70,7 @@ namespace War3Source {
 
 			MapItem *mapItem = new MapItem;
 
-			mapItem->key = key;
+			mapItem->key.assign(key);
 			mapItem->value = value;
 
 			this->items->Append(mapItem);

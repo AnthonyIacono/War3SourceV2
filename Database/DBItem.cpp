@@ -1,12 +1,12 @@
 #include "DBItem.h"
-#include <iostream>
+#include "Utils.h"
 
 namespace War3Source {
 	DBItem::DBItem(unsigned int id, unsigned int characterId, const char *className, const char *data) {
 		this->id = id;
 		this->characterId = characterId;
-		strcpy_s(this->className, sizeof(this->className), className);
-		strcpy_s(this->data, sizeof(this->data), data);
+		StrCopy(this->className, sizeof(this->className), className);
+		StrCopy(this->data, sizeof(this->data), data);
 	}
 
 	DBItem::~DBItem() {

@@ -19,7 +19,7 @@ namespace War3Source {
 			dbInfo = dbi->FindDatabaseConf("default");
 
 			if(dbInfo == NULL) {
-				strcpy_s(error, err_max, "Unable to find database configuration for war3source or default.");
+				StrCopy(error, err_max, "Unable to find database configuration for war3source or default.");
 				return false;
 			}
 		}
@@ -34,7 +34,7 @@ namespace War3Source {
 		}
 
 		if(NULL == dbDriver) {
-			strcpy_s(error, err_max, "Unable to load database driver.");
+			StrCopy(error, err_max, "Unable to load database driver.");
 			return false;
 		}
 

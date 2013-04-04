@@ -1,6 +1,6 @@
 #include "NavMeshLoader.h"
 
-#include <iostream>
+#include "Utils.h"
 #include <sys/stat.h>
 #include "sdk/smsdk_ext.h"
 #include "List.h"
@@ -22,7 +22,7 @@
 
 namespace War3Source {
 	NavMeshLoader::NavMeshLoader(const char *mapName) {
-		strcpy_s(this->mapName, sizeof(this->mapName), mapName);
+		StrCopy(this->mapName, sizeof(this->mapName), mapName);
 		this->bytesRead = 0;
 	}
 
@@ -34,7 +34,7 @@ namespace War3Source {
 	}
 
 	INavMesh *NavMeshLoader::Load(char *error, int errorMaxlen) {
-		strcpy_s(error, errorMaxlen, "");
+		StrCopy(error, errorMaxlen, "");
 
 		char navPath[1024];
 		g_pSM->BuildPath(Path_Game, navPath, sizeof(navPath), "maps\\%s.nav", this->mapName);

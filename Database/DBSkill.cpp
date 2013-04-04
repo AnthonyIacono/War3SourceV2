@@ -1,11 +1,11 @@
 #include "DBSkill.h"
-#include <iostream>
+#include "Utils.h"
 
 namespace War3Source {
 	DBSkill::DBSkill(unsigned int id, unsigned int characterId, const char *className, unsigned int level) {
 		this->id = id;
 		this->characterId = characterId;
-		strcpy_s(this->className, sizeof(this->className), className);
+		StrCopy(this->className, sizeof(this->className), className);
 		this->level = level;
 	}
 

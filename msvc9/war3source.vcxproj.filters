@@ -31,9 +31,6 @@
     <Filter Include="Interfaces\STLish">
       <UniqueIdentifier>{1e260936-3915-4360-9bf8-4ec1065e23e3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Database">
-      <UniqueIdentifier>{a2c3a77b-466a-4f67-92b3-d0d7670112c0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Interfaces\Database">
       <UniqueIdentifier>{a1f17c0e-c9ab-44f6-ac58-7eb5bf9f04bd}</UniqueIdentifier>
     </Filter>
@@ -51,6 +48,15 @@
     </Filter>
     <Filter Include="HL2SDK">
       <UniqueIdentifier>{364a068a-26da-4419-9a95-280f07370cb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Regex">
+      <UniqueIdentifier>{4c777014-f0c2-4775-94f9-8560dafaf50b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Regex">
+      <UniqueIdentifier>{f1a407c5-1b52-4b64-84ca-c12fab23559f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Database">
+      <UniqueIdentifier>{a2c3a77b-466a-4f67-92b3-d0d7670112c0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -170,6 +176,18 @@
     </ClCompile>
     <ClCompile Include="..\Database\PLCharacterCallback.cpp">
       <Filter>Source Files\Database</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Database\PLQuestCallback.cpp">
+      <Filter>Source Files\Database</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Regex\CRegEx.cpp">
+      <Filter>Source Files\Regex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Models\Quest.cpp">
+      <Filter>Source Files\Models</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -428,9 +446,6 @@
     <ClInclude Include="..\database\ConnectCallback.h">
       <Filter>Header Files\Database</Filter>
     </ClInclude>
-    <ClInclude Include="..\Database\PLCharacterCallback">
-      <Filter>Header Files\Database</Filter>
-    </ClInclude>
     <ClInclude Include="..\database\ConnectOperation.h">
       <Filter>Header Files\Database</Filter>
     </ClInclude>
@@ -475,6 +490,15 @@
     </ClInclude>
     <ClInclude Include="..\HL2SDK.h">
       <Filter>HL2SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Utils.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Regex\CRegEx.h">
+      <Filter>Header Files\Regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Models\Quest.h">
+      <Filter>Header Files\Models</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

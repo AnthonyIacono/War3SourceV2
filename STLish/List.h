@@ -2,7 +2,7 @@
 #define __war3source_list_h__
 
 #include "IList.h"
-#include <iostream>
+#include "Utils.h"
 #include <sh_vector.h>
 
 namespace War3Source {

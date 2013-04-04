@@ -1,12 +1,12 @@
 #include "DBCharacter.h"
-#include <iostream>
+#include "Utils.h"
 
 namespace War3Source {
 	DBCharacter::DBCharacter(unsigned int id, unsigned int playerID, const char *className, const char *name, unsigned int level, unsigned int xp) {
 		this->id = id;
 		this->playerID = playerID;
-		strcpy_s(this->className, sizeof(this->className), className);
-		strcpy_s(this->name, sizeof(this->name), name);
+		StrCopy(this->className, sizeof(this->className), className);
+		StrCopy(this->name, sizeof(this->name), name);
 		this->level = level;
 		this->xp = xp;
 	}

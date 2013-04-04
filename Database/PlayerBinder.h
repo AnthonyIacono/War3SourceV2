@@ -3,6 +3,7 @@
 
 #include "IPlayerBinder.h"
 #include "IList.h"
+#include "IMap.h"
 #include "IDBPlayer.h"
 #include "IDBItem.h"
 #include "IDBSkill.h"
@@ -12,7 +13,7 @@
 namespace War3Source {
 	class PlayerBinder : public IPlayerBinder {
 	public:
-		PlayerBinder(IDBPlayer *databasePlayer, IList<IDBCharacter*> *DBCharacters,
+		PlayerBinder(IDBPlayer *databasePlayer, IList<IDBCharacter*> *dbCharacters,
 			IList<IDBItem*> *databaseItems, IList<IDBSkill*> *databaseSkills,
 			IList<IDBQuest*> *databaseQuests);
 		~PlayerBinder();
@@ -21,9 +22,12 @@ namespace War3Source {
 		IPlayer *BindPlayerData();
 
 	private:
+		IMap<SourceHook::String> *_ParseKVToMap(const char *propertiesData);
+
+	private:
 		IDBPlayer *databasePlayer;
 		IList<IDBItem*> *databaseItems;
-		IList<IDBCharacter*> *DBCharacters;
+		IList<IDBCharacter*> *dbCharacters;
 		IList<IDBSkill*> *databaseSkills;
 		IList<IDBQuest*> *databaseQuests;
 	};

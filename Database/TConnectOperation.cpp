@@ -1,4 +1,5 @@
 #include "ConnectOperation.h"
+#include "Utils.h"
 
 namespace War3Source {
 	ConnectOperation::ConnectOperation(IDBDriver *dbDriver, const DatabaseInfo *dbInfo, IConnectCallback *callback) {
@@ -6,7 +7,7 @@ namespace War3Source {
 		this->dbInfo = dbInfo;
 		this->callback = callback;
 
-		strcpy_s(this->connectionError, sizeof(this->connectionError), "");
+		StrCopy(this->connectionError, sizeof(this->connectionError), "");
 		this->database = NULL;
 	}
 

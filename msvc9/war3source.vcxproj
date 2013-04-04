@@ -74,10 +74,10 @@
       <AdditionalIncludeDirectories>$(SOURCEMOD14)\public;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>tier0.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>tier0.lib;tier1.lib;vstdlib.lib;..\Regex\lib_win\pcre.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)war3source.ext.dll</OutputFile>
       <AdditionalLibraryDirectories>$(HL2SDKCSS)\lib\public;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>libc;libcmt;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
@@ -123,6 +123,7 @@
     <ClCompile Include="..\ClientListener.cpp" />
     <ClCompile Include="..\Database\PLCharacterCallback.cpp" />
     <ClCompile Include="..\Database\PLPlayerCallback.cpp" />
+    <ClCompile Include="..\Database\PLQuestCallback.cpp" />
     <ClCompile Include="..\Database\TConnectOperation.cpp" />
     <ClCompile Include="..\Database\TConnectCallback.cpp" />
     <ClCompile Include="..\Database\DBCharacter.cpp" />
@@ -143,6 +144,7 @@
     <ClCompile Include="..\Models\Client.cpp" />
     <ClCompile Include="..\Models\Item.cpp" />
     <ClCompile Include="..\Models\Player.cpp" />
+    <ClCompile Include="..\Models\Quest.cpp" />
     <ClCompile Include="..\Models\Race.cpp" />
     <ClCompile Include="..\Models\Skill.cpp" />
     <ClCompile Include="..\Nav\NavMesh.cpp" />
@@ -157,7 +159,9 @@
     <ClCompile Include="..\Nav\NavMeshLoader.cpp" />
     <ClCompile Include="..\Nav\NavMeshPlace.cpp" />
     <ClCompile Include="..\Nav\NavMeshVisibleArea.cpp" />
+    <ClCompile Include="..\Regex\CRegEx.cpp" />
     <ClCompile Include="..\sdk\smsdk_ext.cpp" />
+    <ClCompile Include="..\Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\ClientListener.h" />
@@ -183,7 +187,6 @@
     <ClInclude Include="..\Database\PlayerLoader.h" />
     <ClInclude Include="..\Database\PlayerLoaderCallback.h" />
     <ClInclude Include="..\Database\PlayerPersister.h" />
-    <ClInclude Include="..\Database\PLCharacterCallback" />
     <ClInclude Include="..\Database\PLCharacterCallback.h" />
     <ClInclude Include="..\Database\PLItemCallback.h" />
     <ClInclude Include="..\Database\PLPlayerCallback.h" />
@@ -204,6 +207,7 @@
     <ClInclude Include="..\Models\ISkill.h" />
     <ClInclude Include="..\Models\Item.h" />
     <ClInclude Include="..\Models\Player.h" />
+    <ClInclude Include="..\Models\Quest.h" />
     <ClInclude Include="..\Models\Race.h" />
     <ClInclude Include="..\Models\Skill.h" />
     <ClInclude Include="..\Nav\INavMesh.h" />
@@ -233,6 +237,7 @@
     <ClInclude Include="..\Nav\NavMeshLoader.h" />
     <ClInclude Include="..\Nav\NavMeshPlace.h" />
     <ClInclude Include="..\Nav\NavMeshVisibleArea.h" />
+    <ClInclude Include="..\Regex\CRegEx.h" />
     <ClInclude Include="..\sdk\smsdk_config.h" />
     <ClInclude Include="..\sdk\smsdk_ext.h" />
     <ClInclude Include="..\..\sourcemod-1-4-a80f660407e7\public\IAdminSystem.h" />
@@ -261,6 +266,7 @@
     <ClInclude Include="..\STLish\IMap.h" />
     <ClInclude Include="..\STLish\List.h" />
     <ClInclude Include="..\STLish\Map.h" />
+    <ClInclude Include="..\Utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

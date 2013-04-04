@@ -5,14 +5,16 @@
 #include "PlayerBinder.h"
 #include "List.h"
 #include <sh_string.h>
+#include "PLQuestCallback.h"
 
 using namespace SourceHook;
 
 namespace War3Source {
-	PLSkillCallback::PLSkillCallback(IPlayerLoader *playerLoader, IDBPlayer *databasePlayer, IList<IDBCharacter*> *DBCharacters, IList<IDBItem*> *databaseItems) {
+	PLSkillCallback::PLSkillCallback(IPlayerLoader *playerLoader, IDBPlayer *databasePlayer, IList<IDBCharacter*> *databaseCharacters, IList<IDBItem*> *databaseItems) {
 		this->playerLoader = playerLoader;
 		this->databasePlayer = databasePlayer;
-		this->DBCharacters = DBCharacters;
+		this->databaseCharacters = databaseCharacters;
+		this->databaseItems = databaseItems;
 	}
 
 	PLSkillCallback::~PLSkillCallback() {
@@ -50,12 +52,32 @@ namespace War3Source {
 			databaseSkills->Append(dbSkill);
 		}
 
-//		IQueryCallback *characterSelectCallback = new PLQuestCallback(this->playerLoader,
-	//		this->databasePlayer, this->DBCharacters, this->databaseItems, databaseSkills);
+		String questsQuery("SELECT * FROM war3_quests WHERE character_id IN (");
 
-		//QueryOperation *characterSelectOp = new QueryOperation(charactersQuery, characterSelectCallback);
+		unsigned int characterCount = this->databaseCharacters->Size();
 
-		//dbi->AddToThreadQueue(characterSelectOp, PrioQueue_Normal);
+		char tempStr[64];
+
+		for(unsigned int characterIndex = 0; characterIndex < characterCount; characterIndex++) {
+			IDBCharacter *dbCharacter = this->databaseCharacters->At(characterIndex);
+
+			if(characterIndex != 0) {
+				questsQuery.append(",");
+			}
+
+			sprintf_s(tempStr, sizeof(tempStr), "'%d'", dbCharacter->GetID());
+			questsQuery.append(tempStr);
+		}
+
+		questsQuery.append(")");
+
+		IQueryCallback *questCallback = new PLQuestCallback(this->playerLoader,
+			this->databasePlayer, this->databaseCharacters, this->databaseItems,
+			databaseSkills);
+
+		QueryOperation *questSelectOp = new QueryOperation(questsQuery.c_str(), questCallback);
+
+		dbi->AddToThreadQueue(questSelectOp, PrioQueue_Normal);
 	}
 
 	void PLSkillCallback::OnCancel(const char *query) {

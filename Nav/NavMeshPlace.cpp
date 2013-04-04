@@ -1,10 +1,11 @@
 #include "NavMeshPlace.h"
-#include <iostream>
+#include "Utils.h"
+#include "Utils.h"
 
 namespace War3Source {
 	NavMeshPlace::NavMeshPlace(unsigned int id, const char *name) {
 		this->id = id;
-		strcpy_s(this->name, sizeof(this->name), name);
+		StrCopy(this->name, sizeof(this->name), name);
 	}
 
 	NavMeshPlace::~NavMeshPlace() {

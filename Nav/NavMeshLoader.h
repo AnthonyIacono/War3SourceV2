@@ -3,6 +3,7 @@
 
 #include "INavMeshLoader.h"
 #include "INavMesh.h"
+#include "Utils.h"
 #include <iostream>
 
 namespace War3Source {

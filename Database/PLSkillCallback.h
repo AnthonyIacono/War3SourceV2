@@ -12,7 +12,7 @@
 namespace War3Source {
 	class PLSkillCallback : public IQueryCallback {
 	public:
-		PLSkillCallback(IPlayerLoader *playerLoader, IDBPlayer *databasePlayer, IList<IDBCharacter*> *DBCharacters, IList<IDBItem*> *databaseItems);
+		PLSkillCallback(IPlayerLoader *playerLoader, IDBPlayer *databasePlayer, IList<IDBCharacter*> *databaseCharacters, IList<IDBItem*> *databaseItems);
 		~PLSkillCallback();
 
 		void OnError(const char *query, const char *error, int errorCode);
@@ -22,7 +22,7 @@ namespace War3Source {
 	private:
 		IPlayerLoader *playerLoader;
 		IDBPlayer *databasePlayer;
-		IList<IDBCharacter*> *DBCharacters;
+		IList<IDBCharacter*> *databaseCharacters;
 		IList<IDBItem*> *databaseItems;
 	};
 }
