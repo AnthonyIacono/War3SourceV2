@@ -57,8 +57,8 @@
     </CustomBuildStep>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\;..\STLish;..\Models;..\Database;..\HL2SDK;..\Nav;$(HL2SDKCSS);$(HL2SDKCSS)\public;$(HL2SDKCSS)\public\tier0;$(HL2SDKCSS)\public\tier1;$(SOURCEMOD)\public;$(SOURCEMOD)\public\sourcepawn;$(MMSOURCE19)\core;$(MMSOURCE19)\core\sourcehook;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;SDK_EXPORTS;_CRT_SECURE_NO_DEPRECATE;SOURCEMOD_BUILD;ORANGEBOX_BUILD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\;..\Sourcemod;..\Commands;..\STLish;..\Models;..\Database;..\HL2SDK;..\Nav;$(HL2SDKCSS);$(HL2SDKCSS)\public;$(HL2SDKCSS)\public\tier0;$(HL2SDKCSS)\public\tier1;$(SOURCEMOD)\public;$(SOURCEMOD)\public\sourcepawn;$(MMSOURCE19)\core;$(MMSOURCE19)\core\sourcehook;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;SDK_EXPORTS;_CRT_SECURE_NO_DEPRECATE;SOURCEMOD_BUILD;ORANGEBOX_BUILD;SOURCE_ENGINE=3;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -121,6 +121,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\ClientListener.cpp" />
+    <ClCompile Include="..\Commands\ClientCommandListener.cpp" />
+    <ClCompile Include="..\Commands\SayCommandListener.cpp" />
+    <ClCompile Include="..\CompatWrappers.cpp" />
     <ClCompile Include="..\Database\PLCharacterCallback.cpp" />
     <ClCompile Include="..\Database\PLPlayerCallback.cpp" />
     <ClCompile Include="..\Database\PLQuestCallback.cpp" />
@@ -165,6 +168,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\ClientListener.h" />
+    <ClInclude Include="..\Commands\ClientCommandListener.h" />
+    <ClInclude Include="..\Commands\IClientCommandListener.h" />
+    <ClInclude Include="..\Commands\ISayCommandListener.h" />
+    <ClInclude Include="..\Commands\SayCommandListener.h" />
+    <ClInclude Include="..\CompatWrappers.h" />
     <ClInclude Include="..\Database\IConnectCallback.h" />
     <ClInclude Include="..\database\IDBCharacter.h" />
     <ClInclude Include="..\database\IDBItem.h" />
@@ -196,7 +204,7 @@
     <ClInclude Include="..\Database\QueryOperation.h" />
     <ClInclude Include="..\Extension.h" />
     <ClInclude Include="..\Globals.h" />
-    <ClInclude Include="..\HL2SDK.h" />
+    <ClInclude Include="..\HL2SDK\HL2SDK.h" />
     <ClInclude Include="..\Models\Character.h" />
     <ClInclude Include="..\Models\Client.h" />
     <ClInclude Include="..\Models\ICharacter.h" />
@@ -262,6 +270,9 @@
     <ClInclude Include="..\..\sourcemod-1-4-a80f660407e7\public\IThreader.h" />
     <ClInclude Include="..\..\sourcemod-1-4-a80f660407e7\public\ITimerSystem.h" />
     <ClInclude Include="..\..\sourcemod-1-4-a80f660407e7\public\ITranslator.h" />
+    <ClInclude Include="..\Sourcemod\convar_sm.h" />
+    <ClInclude Include="..\Sourcemod\convar_sm_l4d.h" />
+    <ClInclude Include="..\Sourcemod\convar_sm_ob.h" />
     <ClInclude Include="..\STLish\IList.h" />
     <ClInclude Include="..\STLish\IMap.h" />
     <ClInclude Include="..\STLish\List.h" />

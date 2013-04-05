@@ -46,9 +46,6 @@
     <Filter Include="Interfaces\Models">
       <UniqueIdentifier>{e06cf095-a71a-4e30-b764-ddd7d70c4fd7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="HL2SDK">
-      <UniqueIdentifier>{364a068a-26da-4419-9a95-280f07370cb8}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Regex">
       <UniqueIdentifier>{4c777014-f0c2-4775-94f9-8560dafaf50b}</UniqueIdentifier>
     </Filter>
@@ -57,6 +54,21 @@
     </Filter>
     <Filter Include="Header Files\Database">
       <UniqueIdentifier>{a2c3a77b-466a-4f67-92b3-d0d7670112c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interfaces\Commands">
+      <UniqueIdentifier>{7a6ddad3-287a-411c-8a86-2261b6b4e614}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Commands">
+      <UniqueIdentifier>{0c9601c2-3e6f-4523-8e5d-152b3b9cb3be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Commands">
+      <UniqueIdentifier>{a11e9c5e-363b-4ee4-8c4d-a97635517a54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Sourcemod">
+      <UniqueIdentifier>{e10b501d-dd81-44c8-927d-7ea96084b88d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\HL2SDK">
+      <UniqueIdentifier>{9b6a2418-11bf-426c-a3c7-d9cc36141f3f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -188,6 +200,15 @@
     </ClCompile>
     <ClCompile Include="..\Models\Quest.cpp">
       <Filter>Source Files\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Commands\ClientCommandListener.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CompatWrappers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Commands\SayCommandListener.cpp">
+      <Filter>Source Files\Commands</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -488,9 +509,6 @@
     <ClInclude Include="..\Database\PLCharacterCallback.h">
       <Filter>Header Files\Database</Filter>
     </ClInclude>
-    <ClInclude Include="..\HL2SDK.h">
-      <Filter>HL2SDK</Filter>
-    </ClInclude>
     <ClInclude Include="..\Utils.h">
       <Filter>Source Files</Filter>
     </ClInclude>
@@ -499,6 +517,33 @@
     </ClInclude>
     <ClInclude Include="..\Models\Quest.h">
       <Filter>Header Files\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Commands\IClientCommandListener.h">
+      <Filter>Interfaces\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Commands\ClientCommandListener.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CompatWrappers.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sourcemod\convar_sm.h">
+      <Filter>Header Files\Sourcemod</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sourcemod\convar_sm_l4d.h">
+      <Filter>Header Files\Sourcemod</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sourcemod\convar_sm_ob.h">
+      <Filter>Header Files\Sourcemod</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HL2SDK\HL2SDK.h">
+      <Filter>Header Files\HL2SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Commands\ISayCommandListener.h">
+      <Filter>Interfaces\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Commands\SayCommandListener.h">
+      <Filter>Header Files\Commands</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

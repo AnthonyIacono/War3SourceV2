@@ -7,6 +7,7 @@ namespace War3Source {
 	class Extension : public SDKExtension {
 	public:
 		virtual bool SDK_OnLoad(char *error, size_t maxlength, bool late);
+		virtual void SDK_OnAllLoaded();
 		virtual void SDK_OnUnload();
 		const char *GetExtensionVerString();
 		const char *GetExtensionDateString();

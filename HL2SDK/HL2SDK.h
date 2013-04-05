@@ -9,22 +9,31 @@
 #define GAME_DLL 1
 #endif // !GAME_DLL
 
-#include <vstdlib/random.h>
-#include <igameevents.h>
-#include <engine/IEngineSound.h>
-#include <filesystem.h>
-#include <icvar.h>
-#include <edict.h>
-#include <iserver.h>
+#include <public/vstdlib/random.h>
+#include <public/igameevents.h>
+#include <public/engine/IEngineSound.h>
+#include <public/filesystem.h>
+#include <public/icvar.h>
+#include <public/edict.h>
+#include <public/iserver.h>
 #include <game/shared/shareddefs.h>
 
 #if SOURCE_ENGINE >= SE_ORANGEBOX
-#include <toolframework/itoolentity.h>
+#include <public/toolframework/itoolentity.h>
 #endif
 
-#include <engine\IEngineTrace.h>
-#include <ivoiceserver.h>
+#if SOURCE_ENGINE >= SE_LEFT4DEAD
+#   include "convar_sm_l4d.h"
+#elif SOURCE_ENGINE >= SE_ORANGEBOX
+#   include "convar_sm_ob.h"
+#else
+#   include "convar_sm.h"
+#endif
+
+#include <public\engine\IEngineTrace.h>
+#include <public\ivoiceserver.h>
 
 class CBasePlayer;
+class CBaseEntity;
 
 #endif
