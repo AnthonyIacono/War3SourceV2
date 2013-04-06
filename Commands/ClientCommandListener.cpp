@@ -3,7 +3,8 @@
 #include "sdk\smsdk_ext.h"
 
 namespace War3Source {
-	ClientCommandListener::ClientCommandListener() {
+	ClientCommandListener::ClientCommandListener(int commandClient) {
+		this->commandClient = commandClient;
 	}
 
 	ClientCommandListener::~ClientCommandListener() {
@@ -20,5 +21,15 @@ namespace War3Source {
 	#endif
 		META_CONPRINTF("The argument count is: %d\n", command.ArgC());
 		RETURN_META(MRES_IGNORED);
+	}
+
+	void ClientCommandListener::OnSetCommandClient(int index) {
+		META_CONPRINTF("SetCommandClient() called with value %d\n", index);
+
+		this->commandClient = index + 1; // For some reason SM had to increment one so I assume we will too.
+	}
+
+	int ClientCommandListener::GetCommandClient() {
+		return this->commandClient;
 	}
 }

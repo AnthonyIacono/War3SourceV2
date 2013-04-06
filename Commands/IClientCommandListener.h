@@ -22,6 +22,16 @@ namespace War3Source {
 		#else
 		virtual void OnClientCommand(edict_t *edict) = 0;
 		#endif
+
+		/**
+		 * Called when the command client is set.
+		 */
+		virtual void OnSetCommandClient(int index) = 0;
+
+		/**
+		 * Retrieve the last set command client.
+		 */
+		virtual int GetCommandClient() = 0;
 	};
 }
 

@@ -70,6 +70,12 @@
     <Filter Include="Header Files\HL2SDK">
       <UniqueIdentifier>{9b6a2418-11bf-426c-a3c7-d9cc36141f3f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Menus">
+      <UniqueIdentifier>{76d89266-7813-46c0-adc2-636a88b3e9a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Menus">
+      <UniqueIdentifier>{0f873465-bd5e-4165-9a72-a8d34ba58d6d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\sdk\smsdk_ext.cpp">
@@ -209,6 +215,9 @@
     </ClCompile>
     <ClCompile Include="..\Commands\SayCommandListener.cpp">
       <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Menus\HelpMenuHandler.cpp">
+      <Filter>Source Files\Menus</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -544,6 +553,9 @@
     </ClInclude>
     <ClInclude Include="..\Commands\SayCommandListener.h">
       <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Menus\HelpMenuHandler.h">
+      <Filter>Header Files\Menus</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

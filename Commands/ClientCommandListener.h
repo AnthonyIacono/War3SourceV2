@@ -6,7 +6,7 @@
 namespace War3Source {
 	class ClientCommandListener : public IClientCommandListener {
 	public:
-		ClientCommandListener();
+		ClientCommandListener(int commandClient = 0);
 		~ClientCommandListener();
 
 		void Destroy();
@@ -16,6 +16,13 @@ namespace War3Source {
 		#else
 		void OnClientCommand(edict_t *edict);
 		#endif
+
+		void OnSetCommandClient(int index);
+
+		int GetCommandClient();
+
+	private:
+		int commandClient;
 	};
 }
 

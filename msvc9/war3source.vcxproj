@@ -57,7 +57,7 @@
     </CustomBuildStep>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\;..\Sourcemod;..\Commands;..\STLish;..\Models;..\Database;..\HL2SDK;..\Nav;$(HL2SDKCSS);$(HL2SDKCSS)\public;$(HL2SDKCSS)\public\tier0;$(HL2SDKCSS)\public\tier1;$(SOURCEMOD)\public;$(SOURCEMOD)\public\sourcepawn;$(MMSOURCE19)\core;$(MMSOURCE19)\core\sourcehook;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;..\Sourcemod;..\Menus;..\Commands;..\STLish;..\Models;..\Database;..\HL2SDK;..\Nav;$(HL2SDKCSS);$(HL2SDKCSS)\public;$(HL2SDKCSS)\public\tier0;$(HL2SDKCSS)\public\tier1;$(SOURCEMOD)\public;$(SOURCEMOD)\public\sourcepawn;$(MMSOURCE19)\core;$(MMSOURCE19)\core\sourcehook;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;SDK_EXPORTS;_CRT_SECURE_NO_DEPRECATE;SOURCEMOD_BUILD;ORANGEBOX_BUILD;SOURCE_ENGINE=3;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -143,6 +143,7 @@
     <ClCompile Include="..\Database\QueryOperation.cpp" />
     <ClCompile Include="..\Extension.cpp" />
     <ClCompile Include="..\Globals.cpp" />
+    <ClCompile Include="..\Menus\HelpMenuHandler.cpp" />
     <ClCompile Include="..\Models\Character.cpp" />
     <ClCompile Include="..\Models\Client.cpp" />
     <ClCompile Include="..\Models\Item.cpp" />
@@ -205,6 +206,7 @@
     <ClInclude Include="..\Extension.h" />
     <ClInclude Include="..\Globals.h" />
     <ClInclude Include="..\HL2SDK\HL2SDK.h" />
+    <ClInclude Include="..\Menus\HelpMenuHandler.h" />
     <ClInclude Include="..\Models\Character.h" />
     <ClInclude Include="..\Models\Client.h" />
     <ClInclude Include="..\Models\ICharacter.h" />

@@ -28,6 +28,8 @@ SH_DECL_HOOK1_void(IServerGameClients, ClientCommand, SH_NOATTRIB, 0, edict_t *)
 	SH_DECL_HOOK0_void(ConCommand, Dispatch, SH_NOATTRIB, false);
 #endif
 
+SH_DECL_HOOK1_void(IServerGameClients, SetCommandClient, SH_NOATTRIB, false, int);
+
 /* :HACKHACK: We can't SH_DECL here because ConCmdManager.cpp does.
  * While the OB build only runs on MM:S 1.6.0+ (SH 5+), the older one 
  * can technically be compiled against any MM:S version after 1.4.2.
@@ -152,5 +154,6 @@ namespace War3Source {
 		g_ClientCommandListener = new ClientCommandListener();
 
 		SH_ADD_HOOK_MEMFUNC(IServerGameClients, ClientCommand, g_ServerGameClients, g_ClientCommandListener, &IClientCommandListener::OnClientCommand, false);
+		SH_ADD_HOOK_MEMFUNC(IServerGameClients, SetCommandClient, g_ServerGameClients, g_ClientCommandListener, &IClientCommandListener::OnSetCommandClient, false);
 	}
 }
